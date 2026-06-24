@@ -1,0 +1,477 @@
+/**
+ * Physics Engine - Styles
+ */
+
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #111827;
+    color: #f9fafb;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Simulation page layout */
+body:not(.home-page):not(.theory-page) {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+}
+
+.panel {
+    padding: 24px;
+    background: #1f2937;
+    border-right: 1px solid #374151;
+    box-sizing: border-box;
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #374151;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #111827;
+    color: #60a5fa;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: all 0.2s;
+    border: 1px solid #374151;
+}
+
+.nav-link:hover {
+    background: #374151;
+    color: #93c5fd;
+    border-color: #4b5563;
+}
+
+.panel h1 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4b5563;
+    border-radius: 8px;
+    background: #111827;
+    color: #f9fafb;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.stats {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.canvas-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+canvas {
+    background: #f3f4f6;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Home page styles */
+.home-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    padding: 48px 24px 32px;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border-bottom: 2px solid #374151;
+}
+
+.header h1 {
+    margin: 0 0 8px 0;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.header .subtitle {
+    margin: 0;
+    font-size: 20px;
+    color: #9ca3af;
+}
+
+.home-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.intro h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.intro p {
+    font-size: 18px;
+    color: #d1d5db;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.simulations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+}
+
+.simulation-card {
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 16px;
+    padding: 32px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.simulation-card:not(.coming-soon):hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    border-color: #4b5563;
+}
+
+.simulation-card.coming-soon {
+    opacity: 0.6;
+}
+
+.card-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.simulation-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 24px;
+}
+
+.simulation-card p {
+    color: #d1d5db;
+    margin-bottom: 24px;
+    min-height: 60px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.card-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #374151;
+    color: #9ca3af;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    text-align: center;
+    flex: 1;
+    min-width: 140px;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #374151;
+    color: #f9fafb;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+.about {
+    text-align: center;
+    padding: 48px 24px;
+    background: #1f2937;
+    border-radius: 16px;
+    margin-top: 32px;
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.about p {
+    font-size: 16px;
+    color: #d1d5db;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer {
+    text-align: center;
+    padding: 32px 24px;
+    background: #1f2937;
+    border-top: 1px solid #374151;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* Theory page styles */
+.theory-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.breadcrumb {
+    padding: 16px 24px;
+    background: #1f2937;
+    border-bottom: 1px solid #374151;
+}
+
+.breadcrumb a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.breadcrumb a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+.theory-content {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+.theory-section {
+    margin-bottom: 48px;
+    background: #1f2937;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #374151;
+}
+
+.theory-section h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #60a5fa;
+    margin-bottom: 24px;
+}
+
+.theory-section h3 {
+    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: #93c5fd;
+}
+
+.theory-section p {
+    color: #d1d5db;
+    margin-bottom: 16px;
+}
+
+.theory-section ul {
+    color: #d1d5db;
+    margin-left: 24px;
+}
+
+.theory-section li {
+    margin-bottom: 8px;
+}
+
+.formula-block {
+    background: #111827;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    border-left: 4px solid #2563eb;
+}
+
+.formula-block h3 {
+    margin-top: 0;
+    color: #60a5fa;
+}
+
+.formula {
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    background: #1f2937;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 12px 0;
+    color: #fbbf24;
+    overflow-x: auto;
+}
+
+.formula-description {
+    font-size: 14px;
+    color: #9ca3af;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+.guide-step {
+    background: #111827;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    border-left: 4px solid #10b981;
+}
+
+.guide-step h3 {
+    margin-top: 0;
+    color: #34d399;
+}
+
+.guide-step p {
+    margin-bottom: 12px;
+}
+
+.guide-step ul {
+    margin-left: 24px;
+}
+
+.tip {
+    background: #1f2937;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid #fbbf24;
+    margin-top: 12px;
+}
+
+.insight-box {
+    background: #111827;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid #8b5cf6;
+}
+
+.insight-box h3 {
+    margin-top: 0;
+    color: #a78bfa;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 48px;
+    flex-wrap: wrap;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body:not(.home-page):not(.theory-page) {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        border-right: none;
+        border-bottom: 1px solid #374151;
+    }
+
+    .header h1 {
+        font-size: 36px;
+    }
+
+    .header .subtitle {
+        font-size: 16px;
+    }
+
+    .simulations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .card-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Made with Bob */

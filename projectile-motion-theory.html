@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projectile Motion - Theory & Formulas</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="theory-page">
+    <header class="header">
+        <h1>🎯 Projectile Motion</h1>
+        <p class="subtitle">Theory, Formulas & Usage Guide</p>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="index.html">← Back to Home</a>
+    </nav>
+
+    <main class="theory-content">
+        <section class="theory-section">
+            <h2>📖 Theory</h2>
+            <p>
+                <strong>Projectile motion</strong> is a form of motion experienced by an object
+                that is projected into the air and moves under the influence of gravity. The path
+                followed by a projectile is called its <strong>trajectory</strong>, which is a
+                parabolic curve in the absence of air resistance.
+            </p>
+            <p>
+                When an object is launched at an angle θ with an initial velocity v₀, it follows
+                a curved path. The motion can be analyzed by breaking it into two independent
+                components:
+            </p>
+            <ul>
+                <li><strong>Horizontal motion:</strong> Uniform motion (constant velocity)</li>
+                <li><strong>Vertical motion:</strong> Uniformly accelerated motion (due to gravity)</li>
+            </ul>
+        </section>
+
+        <section class="theory-section">
+            <h2>📐 Key Formulas</h2>
+
+            <div class="formula-block">
+                <h3>Initial Velocity Components</h3>
+                <div class="formula">
+                    v₀ₓ = v₀ · cos(θ)
+                </div>
+                <div class="formula">
+                    v₀ᵧ = v₀ · sin(θ)
+                </div>
+                <p class="formula-description">
+                    Where v₀ is the initial velocity and θ is the launch angle.
+                </p>
+            </div>
+
+            <div class="formula-block">
+                <h3>Position Equations</h3>
+                <div class="formula">
+                    x(t) = v₀ₓ · t = v₀ · cos(θ) · t
+                </div>
+                <div class="formula">
+                    y(t) = v₀ᵧ · t - ½ · g · t² = v₀ · sin(θ) · t - ½ · g · t²
+                </div>
+                <p class="formula-description">
+                    Where g = 9.81 m/s² is the acceleration due to gravity.
+                </p>
+            </div>
+
+            <div class="formula-block">
+                <h3>Velocity Equations</h3>
+                <div class="formula">
+                    vₓ(t) = v₀ₓ = v₀ · cos(θ)
+                </div>
+                <div class="formula">
+                    vᵧ(t) = v₀ᵧ - g · t = v₀ · sin(θ) - g · t
+                </div>
+            </div>
+
+            <div class="formula-block">
+                <h3>Important Parameters</h3>
+                <div class="formula">
+                    <strong>Time of Flight:</strong> T = (2 · v₀ · sin(θ)) / g
+                </div>
+                <div class="formula">
+                    <strong>Maximum Height:</strong> H = (v₀² · sin²(θ)) / (2 · g)
+                </div>
+                <div class="formula">
+                    <strong>Range:</strong> R = (v₀² · sin(2θ)) / g
+                </div>
+                <p class="formula-description">
+                    The maximum range is achieved at θ = 45°.
+                </p>
+            </div>
+        </section>
+
+        <section class="theory-section">
+            <h2>🎮 How to Use the Simulation</h2>
+
+            <div class="guide-step">
+                <h3>Step 1: Set Initial Velocity</h3>
+                <p>
+                    Use the <strong>"Initial velocity"</strong> slider to set the launch speed
+                    of the projectile in meters per second (m/s). Values range from 1 to 200 m/s.
+                </p>
+            </div>
+
+            <div class="guide-step">
+                <h3>Step 2: Set Launch Angle</h3>
+                <p>
+                    Use the <strong>"Launch angle"</strong> slider to set the angle at which
+                    the projectile is launched, measured in degrees from the horizontal.
+                    Values range from 1° to 89°.
+                </p>
+                <p class="tip">
+                    💡 <strong>Tip:</strong> Try 45° for maximum range!
+                </p>
+            </div>
+
+            <div class="guide-step">
+                <h3>Step 3: Launch the Projectile</h3>
+                <p>
+                    Click the <strong>"Launch projectile"</strong> button to start the simulation.
+                    The projectile will follow a parabolic trajectory, and you'll see:
+                </p>
+                <ul>
+                    <li>The red projectile moving along its path</li>
+                    <li>A blue trajectory line showing the complete path</li>
+                    <li>Real-time statistics (time, x position, y position)</li>
+                </ul>
+            </div>
+
+            <div class="guide-step">
+                <h3>Step 4: Experiment</h3>
+                <p>
+                    Try different combinations of velocity and angle to observe how they affect:
+                </p>
+                <ul>
+                    <li>The height reached by the projectile</li>
+                    <li>The distance traveled (range)</li>
+                    <li>The time the projectile stays in the air</li>
+                    <li>The shape of the trajectory</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="theory-section">
+            <h2>🔬 Physics Insights</h2>
+            <div class="insight-box">
+                <h3>Why is the trajectory parabolic?</h3>
+                <p>
+                    The horizontal velocity remains constant (no air resistance), while the
+                    vertical velocity changes linearly due to constant gravitational acceleration.
+                    This combination produces a parabolic path.
+                </p>
+            </div>
+
+            <div class="insight-box">
+                <h3>What affects the range?</h3>
+                <p>
+                    The range depends on both the initial velocity and the launch angle.
+                    For a given velocity, the maximum range occurs at 45°. Angles above or
+                    below 45° result in shorter ranges.
+                </p>
+            </div>
+
+            <div class="insight-box">
+                <h3>Real-world applications</h3>
+                <p>
+                    Projectile motion principles are used in sports (basketball, golf),
+                    military applications (ballistics), space exploration (rocket trajectories),
+                    and many engineering fields.
+                </p>
+            </div>
+        </section>
+
+        <div class="action-buttons">
+            <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+            <a href="projectile-motion.html" class="btn btn-primary">Launch Simulation →</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Tesla Engine - Educational Physics Simulations</p>
+    </footer>
+</body>
+
+</html>
