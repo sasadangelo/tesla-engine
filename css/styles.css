@@ -12,10 +12,15 @@ body {
     line-height: 1.6;
 }
 
-/* Simulation page layout */
+/* Simulation page layout (projectile-motion, uniform-motion, etc.) */
 body:not(.home-page):not(.theory-page) {
     display: grid;
     grid-template-columns: 320px 1fr;
+    grid-template-rows: 1fr auto;
+}
+
+body:not(.home-page):not(.theory-page) .footer {
+    grid-column: 1 / -1;
 }
 
 .panel {

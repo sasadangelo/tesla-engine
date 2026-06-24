@@ -3,7 +3,7 @@
  * Main application logic for UI interaction
  */
 
-import { ProjectileMotionSimulation } from '../projectile-motion/projectile-motion.js';
+import { ProjectileMotionSimulation } from './projectile-motion.js';
 
 // Get DOM elements
 const canvas = document.getElementById('scene');

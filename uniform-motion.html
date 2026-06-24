@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uniform Motion - Speed Race | Tesla Engine</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <aside class="panel">
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">← Home</a>
+            <a href="uniform-motion-theory.html" class="nav-link">📚 Theory</a>
+        </div>
+
+        <h1>Uniform Motion</h1>
+
+        <div class="field">
+            <label for="speed1">🏎️ Red Racer Speed (m/s)</label>
+            <input id="speed1" type="number" min="0" max="100" step="1" value="50" />
+        </div>
+
+        <div class="field">
+            <label for="speed2">🚗 Blue Cruiser Speed (m/s)</label>
+            <input id="speed2" type="number" min="0" max="100" step="1" value="40" />
+        </div>
+
+        <div class="field">
+            <label for="speed3">🚙 Green Machine Speed (m/s)</label>
+            <input id="speed3" type="number" min="0" max="100" step="1" value="30" />
+        </div>
+
+        <div class="field">
+            <label for="distance">Race Distance (m)</label>
+            <input id="distance" type="number" min="100" max="1000" step="100" value="500" />
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+            <button id="startButton" style="flex: 1;">🏁 Start</button>
+            <button id="resetButton" style="flex: 1; background: #374151;">🔄 Reset</button>
+        </div>
+
+        <div class="stats">
+            <div><strong>Time:</strong> <span id="timeValue">0.00</span> s</div>
+            <div><strong>🏎️ Red:</strong> <span id="pos1Value">0.0</span> m</div>
+            <div><strong>🚗 Blue:</strong> <span id="pos2Value">0.0</span> m</div>
+            <div><strong>🚙 Green:</strong> <span id="pos3Value">0.0</span> m</div>
+        </div>
+    </aside>
+
+    <main class="canvas-wrap">
+        <canvas id="scene"></canvas>
+    </main>
+
+    <footer class="footer">
+        <p>Tesla Engine - Educational Physics Simulations</p>
+    </footer>
+
+    <script type="module" src="uniform-motion/uniform-motion-app.js"></script>
+</body>
+
+</html>
