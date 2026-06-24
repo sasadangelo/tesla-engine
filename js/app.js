@@ -48,6 +48,12 @@ function launchProjectile() {
 // Event listeners
 launchButton.addEventListener('click', launchProjectile);
 
+// Update cannon angle when slider changes
+angleInput.addEventListener('input', () => {
+    const angle = Number(angleInput.value);
+    simulation.updateAngle(angle);
+});
+
 // Initial draw
 simulation.drawScene();
 updateStats();
