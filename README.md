@@ -6,6 +6,12 @@ A collection of interactive physics simulations built with a custom JavaScript p
 
 ---
 
+## 🗺️ Roadmap
+
+The full development plan — physics topics, math prerequisites, and simulation milestones — is documented in **[docs/ROADMAP.md](docs/ROADMAP.md)**.
+
+---
+
 ## Project Structure
 
 ```
