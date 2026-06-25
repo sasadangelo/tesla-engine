@@ -97,5 +97,3 @@ export class Vector3D {
         return new Vector3D(vector.x * scalar, vector.y * scalar, vector.z * scalar);
     }
 }
-
-// Made with Bob

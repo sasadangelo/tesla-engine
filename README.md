@@ -1,67 +1,122 @@
-# Physics Engine - Projectile Motion Simulation
+# Tesla Engine — Interactive Physics Simulations
 
-A modular physics engine demonstration showing projectile motion with a clean separation of concerns.
+A collection of interactive physics simulations built with a custom JavaScript physics engine and a [Jekyll](https://jekyllrb.com/) static site.
+
+🌐 **Live site:** https://sasadangelo.github.io/tesla-engine/
+
+---
 
 ## Project Structure
 
 ```
-physics-engine/
-├── index.html                          # Main HTML file
-├── css/
-│   └── styles.css                      # Application styles
-├── js/
-│   └── app.js                          # Application logic and UI interaction
-├── tesla-engine/                       # Tesla Engine - Reusable physics library
-│   ├── vector.js                       # 3D vector mathematics
-│   ├── body.js                         # Physical body with mass and forces
-│   └── world.js                        # Physics world with gravity
-└── projectile-motion/                  # Projectile motion simulation
-    └── projectile-motion.js            # Simulation logic, rendering, and animation
+tesla-engine/
+├── _config.yml              # Jekyll config — development (localhost:5001)
+├── _config_prod.yml         # Jekyll config — production (GitHub Pages)
+├── Gemfile                  # Ruby dependencies
+│
+├── _includes/
+│   ├── header.html          # Shared site header
+│   └── footer.html          # Shared site footer
+│
+├── _layouts/
+│   ├── default.html         # Base layout
+│   ├── home.html            # Home page (no sidebar)
+│   ├── simulation.html      # Simulation pages (left panel + canvas)
+│   └── theory.html          # Theory pages (header + breadcrumb + content)
+│
+├── _pages/
+│   ├── uniform-motion-theory.md      # Uniform motion theory content
+│   └── projectile-motion-theory.md   # Projectile motion theory content
+│
+├── assets/
+│   ├── css/
+│   │   └── styles.css       # All site styles
+│   └── js/
+│       ├── tesla-engine/    # Core physics engine
+│       │   ├── vector.js    # 3D vector math
+│       │   ├── body.js      # Physical body (mass, forces, Euler integration)
+│       │   └── world.js     # Physics world (gravity, body management)
+│       ├── uniform-motion/
+│       │   ├── uniform-motion.js      # Speed race simulation logic
+│       │   └── uniform-motion-app.js  # UI wiring
+│       └── projectile-motion/
+│           ├── projectile-motion.js     # Projectile simulation logic
+│           └── projectile-motion-app.js # UI wiring
+│
+├── index.html               # Home page
+├── uniform-motion.html      # Speed race simulation page
+└── projectile-motion.html   # Projectile motion simulation page
 ```
 
-## Tesla Engine
+---
 
-**Tesla Engine** is the core physics library that powers this simulation. Named after the brilliant inventor Nikola Tesla, it provides fundamental physics components that can be reused across multiple simulations:
+## Prerequisites
 
-- **vector.js**: 3D vector class with mathematical operations (add, subtract, scale, dot product, normalize, etc.)
-- **body.js**: Physical body with mass, position, velocity, and force integration using Euler method
-- **world.js**: Physics world that manages bodies and applies gravity
+- **Ruby** ≥ 3.0 — check with `ruby --version`
+- **Bundler** — install with `gem install bundler`
 
-The engine is designed to be modular and extensible, making it easy to create new physics simulations.
+---
 
-## Projectile Motion Simulation
+## Local Development
 
-The projectile motion simulation demonstrates the Tesla Engine in action:
-- **projectile-motion.js**: Encapsulates the simulation logic, canvas rendering, and animation loop
+```bash
+# 1. Install dependencies (only needed once)
+bundle install
 
-## Application Layer
+# 2. Start the development server on localhost:5001
+bundle exec jekyll serve --port 5001
+```
 
-The application layer handles UI-specific code:
-- **app.js**: Handles user input, DOM manipulation, and connects UI to simulation
+Open http://localhost:5001 in your browser.  
+Jekyll watches for changes and rebuilds automatically.
 
-## Styles
+---
 
-All styling is separated into:
-- **styles.css**: Application styles separated from HTML
+## Production Build
 
-## How to Run
+```bash
+bundle exec jekyll build --config _config_prod.yml
+```
 
-1. Open `index.html` in a modern web browser (or use a local server)
-2. Adjust the initial velocity and launch angle
-3. Click "Launch projectile" to see the simulation
+The static site is generated in `_site/`.
 
-## Features
+---
 
-- ⚡ **Tesla Engine**: Modular and reusable physics library
-- 🎯 Real-time projectile motion simulation
-- 🎨 Interactive controls for velocity and angle
-- 📊 Visual trajectory tracking
-- 📈 Real-time statistics display (time, x position, y position)
-- 🏗️ Clean architecture with separation of concerns
+## Deployment (GitHub Pages)
 
-## Architecture Benefits
+The site is hosted at https://sasadangelo.github.io/tesla-engine/.
 
-- **Reusability**: Tesla Engine can be used for other physics simulations
-- **Maintainability**: Clear separation between library, simulation, and UI
-- **Extensibility**: Easy to add new simulations or physics features
-- **Testability**: Each component can be tested independently
+Push to the `main` branch and configure GitHub Pages to serve from the repository root (or `_site/` with a custom workflow).  
+When building for production the `baseurl` is set to `/tesla-engine` automatically by `_config_prod.yml`.
+
+---
+
+## Available Simulations
+
+| Simulation | Theory | Launch |
+|---|---|---|
+| Uniform Motion — Speed Race | `/uniform-motion-theory/` | `/uniform-motion.html` |
+| Projectile Motion | `/projectile-motion-theory/` | `/projectile-motion.html` |
+
+---
+
+## Tesla Engine (Physics Library)
+
+Located in `assets/js/tesla-engine/`, the engine is a lightweight, modular physics library:
+
+| File | Description |
+|---|---|
+| `vector.js` | 3D vector class — add, subtract, scale, dot product, normalize |
+| `body.js` | Physical body — mass, position, velocity, force integration (Euler) |
+| `world.js` | Physics world — manages bodies, applies gravity each tick |
+
+The engine is shared across all simulations via ES module imports (`import { World } from '../tesla-engine/world.js'`).
+
+---
+
+## Adding a New Simulation
+
+1. Create `assets/js/my-sim/my-sim.js` (simulation logic) and `my-sim-app.js` (UI wiring)
+2. Create `my-sim.html` at the root with `layout: simulation` and `sim_script: /assets/js/my-sim/my-sim-app.js`
+3. Create `_pages/my-sim-theory.md` with `layout: theory`
+4. Add a card to `index.html`

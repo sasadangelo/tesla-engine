@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | Tesla Engine</title>
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+</head>
+<body class="theory-page">
+  {% include header.html %}
+
+  <main>
+    <nav class="breadcrumb">
+      <a href="{{ '/' | relative_url }}">← Back to Home</a>
+      {% if page.sim_url %}
+      <span>|</span>
+      <a href="{{ page.sim_url | relative_url }}">▶️ Launch Simulation</a>
+      {% endif %}
+    </nav>
+
+    <div class="theory-content">
+      {{ content }}
+    </div>
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>

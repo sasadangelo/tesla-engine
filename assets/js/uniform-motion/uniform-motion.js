@@ -308,5 +308,3 @@ export class UniformMotionSimulation {
         };
     }
 }
-
-// Made with Bob

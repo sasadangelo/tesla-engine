@@ -30,5 +30,3 @@ export class World {
         return this;
     }
 }
-
-// Made with Bob

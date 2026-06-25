@@ -1,0 +1,36 @@
+# Jekyll configuration - PRODUCTION
+title: "Tesla Engine"
+description: "Interactive Physics Simulations"
+url: "https://sasadangelo.github.io"
+baseurl: "/tesla-engine"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "theory"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - _config.yml
+  - node_modules/
+  - vendor/

@@ -45,5 +45,3 @@ export class Body {
         return this;
     }
 }
-
-// Made with Bob
