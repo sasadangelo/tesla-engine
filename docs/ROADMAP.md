@@ -1,6 +1,6 @@
 # 🗺️ Tesla Engine — Roadmap
 
-> A structured journey through Physics, Mathematics, and Code.  
+> A structured journey through Physics, Mathematics, and Code.
 > Each topic builds on the previous one, introducing the **Just-in-Time math** needed to implement the simulation.
 
 ---
@@ -9,10 +9,10 @@
 
 | # | Topic | Description | Math JIT |
 |---|-------|-------------|----------|
-| 1.1 | **Uniform Rectilinear Motion (URM)** | Displacement at constant velocity. | Introduction to **Vectors** (magnitude, direction, sense). |
+| 1.1 | ~~**Uniform Rectilinear Motion (URM)**~~ | ~~Displacement at constant velocity.~~ | Introduction to **Vectors** (magnitude, direction, sense). |
 | 1.2 | **Uniformly Accelerated Motion (UAM)** | Introduction of constant acceleration. | **Derivatives and Integrals** — how acceleration generates velocity, and velocity generates position over time. |
 | 1.3 | **Free Fall** | First encounter with Earth's gravitational field (g ≈ 9.81 m/s²). | — |
-| 1.4 | **Projectile Motion (Parabolic)** | Two-dimensional integration of URM + free fall. | **Basic Trigonometry** — sine and cosine to decompose the initial velocity vector into X and Y Cartesian components. |
+| 1.4 | ~~**Projectile Motion (Parabolic)**~~ | ~~Two-dimensional integration of URM + free fall.~~ | **Basic Trigonometry** — sine and cosine to decompose the initial velocity vector into X and Y Cartesian components. |
 | 1.5 | **Simple Harmonic Motion (SHM)** | Pure sinusoidal oscillation — the kinematic bridge before springs. | — |
 
 ---
