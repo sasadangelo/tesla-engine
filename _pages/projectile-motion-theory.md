@@ -1,11 +1,11 @@
 ---
 layout: theory
-title: "Projectile Motion - Theory & Formulas"
+title: "Projectile Motion"
 sim_url: /projectile-motion.html
 permalink: /projectile-motion-theory/
 ---
 
-## 📖 Theory
+# 📖 Projectile Motion
 {: .section-heading }
 
 **Projectile motion** is a form of motion experienced by an object that is projected into the air and moves under the influence of gravity. The path followed by a projectile is called its **trajectory**, which is a parabolic curve in the absence of air resistance.

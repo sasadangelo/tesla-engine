@@ -5,7 +5,7 @@ sim_url: /uniform-motion.html
 permalink: /uniform-motion-theory/
 ---
 
-## 🎯 What is Uniform Motion?
+# 🎯 What is Uniform Motion?
 {: .section-heading }
 
 **Uniform motion** (or uniform rectilinear motion) occurs when an object moves along a straight line at a constant velocity. This means:

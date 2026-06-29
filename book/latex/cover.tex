@@ -1,0 +1,70 @@
+%% Tesla Engine — custom LaTeX cover page
+%% Used only when build_book.sh builds the standalone cover with pdflatex
+\documentclass[a4paper]{article}
+\usepackage[top=0cm,bottom=0cm,left=0cm,right=0cm]{geometry}
+\usepackage{xcolor}
+\usepackage{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\pagestyle{empty}
+
+\definecolor{coverblue}{RGB}{30,80,162}
+\definecolor{covergray}{RGB}{240,242,246}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture, overlay]
+  % Background
+  \fill[covergray] (current page.south west) rectangle (current page.north east);
+
+  % Top colour band
+  \fill[coverblue] (current page.north west)
+    rectangle ([yshift=-8cm]current page.north east);
+
+  % Book title
+  \node[anchor=north, text=white, font=\Huge\bfseries, align=center]
+    at ([yshift=-2cm]current page.north)
+    {Tesla Engine};
+
+  % Subtitle
+  \node[anchor=north, text=white!80!coverblue, font=\Large, align=center]
+    at ([yshift=-4cm]current page.north)
+    {Interactive Physics Simulations};
+
+  % Horizontal rule
+  \draw[white!60!coverblue, line width=1pt]
+    ([xshift=2cm, yshift=-5.5cm]current page.north west)
+    --
+    ([xshift=-2cm, yshift=-5.5cm]current page.north east);
+
+  % Edition label
+  \node[anchor=north, text=white!70!coverblue, font=\normalsize]
+    at ([yshift=-6.2cm]current page.north)
+    {First Edition — 2026};
+
+  % Decorative physics formula block (centre of page)
+  \node[anchor=center, text=coverblue!70!black, font=\large, align=left]
+    at (current page.center)
+    {
+      $x(t) = x_0 + v \cdot t$\\[6pt]
+      $y(t) = v_0 \sin\theta\cdot t - \tfrac{1}{2}g t^2$\\[6pt]
+      $R = \dfrac{v_0^2 \sin 2\theta}{g}$
+    };
+
+  % Author
+  \node[anchor=south, text=coverblue, font=\large\itshape]
+    at ([yshift=3cm]current page.south)
+    {Salvatore D'Angelo};
+
+  % Bottom band
+  \fill[coverblue] (current page.south west)
+    rectangle ([yshift=1.8cm]current page.south east);
+
+  \node[anchor=center, text=white, font=\small]
+    at ([yshift=0.9cm]current page.south)
+    {github.com/sasadangelo/tesla-engine};
+
+\end{tikzpicture}
+
+\end{document}
