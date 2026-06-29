@@ -16,11 +16,73 @@ body {
 body:not(.home-page):not(.theory-page) {
     display: grid;
     grid-template-columns: 320px 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto auto auto;
+}
+
+/* Panel spans canvas row + doc row so it reaches the footer */
+body:not(.home-page):not(.theory-page) .panel {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+body:not(.home-page):not(.theory-page) .canvas-wrap {
+    grid-column: 2;
+    grid-row: 1;
 }
 
 body:not(.home-page):not(.theory-page) .footer {
     grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+/* Simulation documentation section — right column only, below the canvas */
+.sim-doc {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 48px 24px;
+    border-top: 1px solid #374151;
+}
+
+.sim-doc-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sim-doc h2 {
+    font-size: 24px;
+    color: #60a5fa;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #374151;
+}
+
+.sim-doc h3 {
+    font-size: 18px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    color: #93c5fd;
+}
+
+.sim-doc p {
+    color: #d1d5db;
+    margin-bottom: 14px;
+}
+
+.sim-doc ul, .sim-doc ol {
+    color: #d1d5db;
+    margin-left: 24px;
+    margin-bottom: 14px;
+}
+
+.sim-doc li {
+    margin-bottom: 6px;
+}
+
+.sim-doc hr {
+    border: none;
+    border-top: 1px solid #374151;
+    margin: 40px 0;
 }
 
 .panel {
@@ -565,6 +627,15 @@ canvas {
 @media (max-width: 768px) {
     body:not(.home-page):not(.theory-page) {
         grid-template-columns: 1fr;
+    }
+
+    /* Reset explicit placements to flow naturally in single column */
+    body:not(.home-page):not(.theory-page) .panel,
+    body:not(.home-page):not(.theory-page) .canvas-wrap,
+    body:not(.home-page):not(.theory-page) .footer,
+    .sim-doc {
+        grid-column: 1;
+        grid-row: auto;
     }
 
     .panel {

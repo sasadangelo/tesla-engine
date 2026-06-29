@@ -68,40 +68,6 @@ The maximum range is achieved at θ = 45°.
 
 ---
 
-## 🎮 How to Use the Simulation
-{: .section-heading }
-
-### Step 1: Set Initial Velocity
-
-Use the **"Initial velocity"** input to set the launch speed of the projectile in meters per second (m/s). Values range from 1 to 200 m/s.
-
-### Step 2: Set Launch Angle
-
-Use the **"Launch angle"** input to set the angle at which the projectile is launched, measured in degrees from the horizontal. Values range from 1° to 89°.
-
-💡 **Tip:** Try 45° for maximum range!
-{: .tip }
-
-### Step 3: Launch the Projectile
-
-Click the **"Launch projectile"** button to start the simulation. The projectile will follow a parabolic trajectory, and you'll see:
-
-- The red projectile moving along its path
-- A blue trajectory line showing the complete path
-- Real-time statistics (time, x position, y position)
-
-### Step 4: Experiment
-
-Try different combinations of velocity and angle to observe how they affect:
-
-- The height reached by the projectile
-- The distance traveled (range)
-- The time the projectile stays in the air
-- The shape of the trajectory
-{: .theory-section }
-
----
-
 ## 🔬 Physics Insights
 {: .section-heading }
 

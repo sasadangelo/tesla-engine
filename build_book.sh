@@ -167,11 +167,13 @@ preprocess_md() {
 }
 
 UNIFORM_CLEAN="$BUILD_DIR/uniform-motion-theory.md"
+ACCELERATED_CLEAN="$BUILD_DIR/uniformly-accelerated-motion-theory.md"
 PROJECTILE_CLEAN="$BUILD_DIR/projectile-motion-theory.md"
 
 write_preprocess_script
-preprocess_md "$PAGES_DIR/uniform-motion-theory.md"   "$UNIFORM_CLEAN"
-preprocess_md "$PAGES_DIR/projectile-motion-theory.md" "$PROJECTILE_CLEAN"
+preprocess_md "$PAGES_DIR/uniform-motion-theory.md"               "$UNIFORM_CLEAN"
+preprocess_md "$PAGES_DIR/uniformly-accelerated-motion-theory.md" "$ACCELERATED_CLEAN"
+preprocess_md "$PAGES_DIR/projectile-motion-theory.md"            "$PROJECTILE_CLEAN"
 
 # ---------------------------------------------------------------------------
 # Step 2 – (Optional) Build the standalone cover PDF with pdflatex/tikz
@@ -193,7 +195,8 @@ fi
 #            03  preface
 #            04  toc-placeholder (raw LaTeX \tableofcontents)
 #            10  chapter 1 – uniform motion
-#            20  chapter 2 – projectile motion
+#            20  chapter 2 – uniformly accelerated motion
+#            30  chapter 3 – projectile motion
 #            90  appendix
 #            91  bibliography
 #            92  colophon       (raw LaTeX block)
@@ -208,6 +211,7 @@ pandoc \
   "$BOOK_DIR/02-dedication.md" \
   "$BOOK_DIR/03-preface.md" \
   "$UNIFORM_CLEAN" \
+  "$ACCELERATED_CLEAN" \
   "$PROJECTILE_CLEAN" \
   "$BOOK_DIR/90-appendix.md" \
   "$BOOK_DIR/91-bibliography.md" \
