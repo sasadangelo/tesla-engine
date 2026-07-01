@@ -10,10 +10,11 @@
 | # | Topic | Description | Math JIT |
 |---|-------|-------------|----------|
 | 1.1 | ~~**Uniform Rectilinear Motion (URM)**~~ | ~~Displacement at constant velocity.~~ | Introduction to **Vectors** (magnitude, direction, sense). |
-| 1.2 | **Uniformly Accelerated Motion (UAM)** | Introduction of constant acceleration. | **Derivatives and Integrals** — how acceleration generates velocity, and velocity generates position over time. |
-| 1.3 | **Free Fall** | First encounter with Earth's gravitational field (g ≈ 9.81 m/s²). | — |
+| 1.2 | ~~**Uniformly Accelerated Motion (UAM)**~~ | ~~Introduction of constant acceleration.~~ | **Derivatives and Integrals** — how acceleration generates velocity, and velocity generates position over time. |
+| 1.3 | ~~**Free Fall**~~ | ~~Two objects (lead ball and feather) dropped simultaneously. Combo box for gravity preset (Earth, Mars, Jupiter, Deep Space). Slider for air resistance. Demonstrates that mass does not affect free-fall acceleration.~~ | — |
 | 1.4 | ~~**Projectile Motion (Parabolic)**~~ | ~~Two-dimensional integration of URM + free fall.~~ | **Basic Trigonometry** — sine and cosine to decompose the initial velocity vector into X and Y Cartesian components. |
-| 1.5 | **Simple Harmonic Motion (SHM)** | Pure sinusoidal oscillation — the kinematic bridge before springs. | — |
+| 1.5 | **Uniform Circular Motion (UCM)** | Constant-speed motion along a circle — introduces angular velocity ω, period T, and frequency f. | **Angular velocity** ω = Δθ/Δt, centripetal acceleration a = ω²·r. |
+| 1.6 | **Simple Harmonic Motion — Pendulum** | SHM as the projection of UCM: θ(t) = θ₀·cos(ωt) with ω = √(g/L). Interactive pendulum simulation. | **Period** T = 2π√(L/g) — bridge between circular motion and oscillation. |
 
 ---
 
@@ -97,4 +98,4 @@
 
 ---
 
-*Total planned simulations: **23 topics** across 9 chapters.*
+*Total planned simulations: **24 topics** across 9 chapters.*

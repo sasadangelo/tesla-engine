@@ -168,11 +168,13 @@ preprocess_md() {
 
 UNIFORM_CLEAN="$BUILD_DIR/uniform-motion-theory.md"
 ACCELERATED_CLEAN="$BUILD_DIR/uniformly-accelerated-motion-theory.md"
+FREE_FALL_CLEAN="$BUILD_DIR/free-fall-theory.md"
 PROJECTILE_CLEAN="$BUILD_DIR/projectile-motion-theory.md"
 
 write_preprocess_script
 preprocess_md "$PAGES_DIR/uniform-motion-theory.md"               "$UNIFORM_CLEAN"
 preprocess_md "$PAGES_DIR/uniformly-accelerated-motion-theory.md" "$ACCELERATED_CLEAN"
+preprocess_md "$PAGES_DIR/free-fall-theory.md"                    "$FREE_FALL_CLEAN"
 preprocess_md "$PAGES_DIR/projectile-motion-theory.md"            "$PROJECTILE_CLEAN"
 
 # ---------------------------------------------------------------------------
@@ -212,6 +214,7 @@ pandoc \
   "$BOOK_DIR/03-preface.md" \
   "$UNIFORM_CLEAN" \
   "$ACCELERATED_CLEAN" \
+  "$FREE_FALL_CLEAN" \
   "$PROJECTILE_CLEAN" \
   "$BOOK_DIR/90-appendix.md" \
   "$BOOK_DIR/91-bibliography.md" \

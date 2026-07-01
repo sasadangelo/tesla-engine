@@ -1,0 +1,106 @@
+---
+layout: simulation
+title: "Free Fall — Does Mass Matter?"
+sim_script: /assets/js/free-fall/free-fall-app.js
+---
+
+<aside class="panel">
+  <div class="nav-links">
+    <a href="{{ '/' | relative_url }}" class="nav-link">← Home</a>
+    <a href="{{ '/free-fall-theory/' | relative_url }}" class="nav-link">📚 Theory</a>
+  </div>
+
+  <h1>Free Fall</h1>
+
+  <div class="field">
+    <label for="gravitySelect">🌍 Gravity preset</label>
+    <select id="gravitySelect">
+      <option value="earth"     selected>Earth  (9.81 m/s²)</option>
+      <option value="mars"           >Mars   (3.72 m/s²)</option>
+      <option value="jupiter"        >Jupiter (24.79 m/s²)</option>
+      <option value="deepspace"      >Deep Space (0 m/s²)</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="dampingSlider">
+      💨 Air resistance &nbsp;<span id="dampingValue">0.00</span>
+    </label>
+    <input id="dampingSlider" type="range" min="0" max="2" step="0.05" value="0" />
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:#9ca3af;margin-top:2px;">
+      <span>Vacuum</span><span>Light air</span><span>Dense air</span>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+    <button id="startButton" style="flex: 1;">▶ Drop!</button>
+    <button id="resetButton" style="flex: 1; background: #374151;">🔄 Reset</button>
+  </div>
+
+  <div class="stats">
+    <div><strong>Time:</strong> <span id="timeValue">0.00</span> s</div>
+    <div><strong>🔵 Lead vel:</strong> <span id="leadVelValue">0.0</span> m/s</div>
+    <div><strong>🪶 Feather vel:</strong> <span id="featherVelValue">0.0</span> m/s</div>
+    <div><strong>🔵 Landed:</strong> <span id="leadTimeValue">—</span></div>
+    <div><strong>🪶 Landed:</strong> <span id="featherTimeValue">—</span></div>
+  </div>
+</aside>
+
+<main class="canvas-wrap">
+  <canvas id="scene"></canvas>
+</main>
+
+<section class="sim-doc">
+  <div class="sim-doc-inner">
+
+    <h2>🎮 How to Use the Simulation</h2>
+
+    <h3>Step 1: Choose a gravity preset</h3>
+    <p>
+      Select the gravitational environment using the <strong>"Gravity preset"</strong> combo box.
+      Earth has g&nbsp;=&nbsp;9.81&nbsp;m/s², Mars 3.72&nbsp;m/s², Jupiter 24.79&nbsp;m/s².
+      "Deep Space" sets g&nbsp;=&nbsp;0: neither object falls — they float in weightlessness.
+    </p>
+
+    <h3>Step 2: Set air resistance</h3>
+    <p>
+      Drag the <strong>"Air resistance"</strong> slider to the left (Vacuum) or right (Dense air).
+      At zero the medium offers no drag — this is the <em>vacuum experiment</em> that
+      Galileo could only imagine. Increase it to see how air separates the heavy lead ball
+      from the light feather.
+    </p>
+    <p class="tip">
+      💡 <strong>Key insight:</strong> Start with the slider at <em>Vacuum</em> and notice
+      that both objects land at exactly the same time. Then increase air resistance and
+      repeat — the feather slows dramatically while the lead ball barely changes.
+      The difference is <strong>air</strong>, not weight.
+    </p>
+
+    <h3>Step 3: Drop!</h3>
+    <p>
+      Click <strong>"Drop!"</strong> to release both objects from rest at the same height
+      (100 m). Watch the trails, velocity readouts, and landing times in the stats panel.
+    </p>
+
+    <hr>
+
+    <h2>🧪 Suggested Experiments</h2>
+
+    <h3>Experiment 1 — Galileo's vacuum</h3>
+    <p><strong>Setup:</strong> Earth gravity, air resistance = 0</p>
+    <p><strong>Expected result:</strong> Lead ball and feather land simultaneously. Landing time: t = √(2·100/9.81) ≈ 4.52 s</p>
+
+    <h3>Experiment 2 — Earth with air</h3>
+    <p><strong>Setup:</strong> Earth gravity, air resistance ≈ 2.0</p>
+    <p><strong>Expected result:</strong> Lead ball lands near 4.52 s; feather reaches terminal velocity and takes much longer.</p>
+
+    <h3>Experiment 3 — Mars vs Earth (vacuum)</h3>
+    <p><strong>Setup:</strong> Switch between Earth and Mars with air resistance = 0</p>
+    <p><strong>Expected result:</strong> Both objects still land together on Mars, but later (t ≈ 7.33 s). Gravity changes <em>when</em> they land, never <em>who</em> lands first.</p>
+
+    <h3>Experiment 4 — Deep Space</h3>
+    <p><strong>Setup:</strong> Deep Space preset</p>
+    <p><strong>Expected result:</strong> g = 0 — neither object falls. This shows that "falling" requires a gravitational field, not mass.</p>
+
+  </div>
+</section>
