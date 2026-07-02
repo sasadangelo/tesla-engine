@@ -669,3 +669,98 @@ canvas {
 }
 
 /* Made with Bob */
+
+/* -------------------------------------------------------------------------
+ * Chapter grid (root index.html)
+ * -------------------------------------------------------------------------*/
+
+.chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+}
+
+.chapter-card {
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.chapter-card.chapter-active:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    border-color: #2563eb;
+}
+
+.chapter-card.chapter-coming-soon {
+    opacity: 0.55;
+}
+
+.chapter-number {
+    background: #111827;
+    color: #374151;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    padding: 16px 24px 0;
+    user-select: none;
+}
+
+.chapter-card.chapter-active .chapter-number {
+    color: #2563eb;
+}
+
+.chapter-body {
+    padding: 16px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.chapter-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.chapter-card h3 {
+    margin: 0 0 4px 0;
+    font-size: 22px;
+}
+
+.chapter-subtitle {
+    color: #9ca3af;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0 0 14px 0 !important;
+}
+
+.chapter-body > p:not(.chapter-subtitle) {
+    color: #d1d5db;
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.chapter-body .btn {
+    align-self: flex-start;
+    flex: unset;
+    min-width: unset;
+    padding: 10px 22px;
+}
+
+@media (max-width: 900px) {
+    .chapters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .chapters-grid {
+        grid-template-columns: 1fr;
+    }
+}

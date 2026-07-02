@@ -193,15 +193,16 @@ fi
 # Step 3 – Assemble the full book with Pandoc
 #          Source order:
 #            01  half-title
-#            02  dedication    (raw LaTeX block)
+#            02  dedication        (raw LaTeX block)
 #            03  preface
-#            04  toc-placeholder (raw LaTeX \tableofcontents)
+#            04  toc-placeholder   (raw LaTeX \tableofcontents)
 #            10  chapter 1 – uniform motion
 #            20  chapter 2 – uniformly accelerated motion
-#            30  chapter 3 – projectile motion
+#            30  chapter 3 – free fall
+#            40  chapter 4 – projectile motion
 #            90  appendix
 #            91  bibliography
-#            92  colophon       (raw LaTeX block)
+#            92  colophon          (raw LaTeX block)
 # ---------------------------------------------------------------------------
 info "Running Pandoc…"
 

@@ -6,103 +6,145 @@ title: "Tesla Engine - Physics Simulations"
 <section class="intro">
   <h2>Welcome</h2>
   <p>
-    Explore the laws of physics through interactive simulations.
-    Each simulation includes a detailed theoretical explanation,
-    mathematical formulas, and a practical usage guide.
+    A structured journey through Physics, Mathematics, and Code.
+    Each chapter builds on the previous one, introducing the
+    <strong>Just-in-Time math</strong> needed to implement the simulation.
   </p>
 </section>
 
-<h2 class="section-title">Available Simulations</h2>
+<h2 class="section-title">Chapters</h2>
 
-<section class="simulations-grid">
-  <div class="simulation-card">
-    <div class="card-icon">🏁</div>
-    <h3>Uniform Motion - Speed Race</h3>
-    <p>
-      Experience uniform rectilinear motion through an exciting speed race!
-      Set different velocities and watch which vehicle wins the race.
-    </p>
-    <div class="card-actions">
-      <a href="{{ '/uniform-motion-theory/' | relative_url }}" class="btn btn-secondary">
-        📚 Theory &amp; Formulas
-      </a>
-      <a href="{{ '/uniform-motion.html' | relative_url }}" class="btn btn-primary">
-        ▶️ Launch Simulation
+<section class="chapters-grid">
+
+  <div class="chapter-card chapter-active">
+    <div class="chapter-number">1</div>
+    <div class="chapter-body">
+      <div class="chapter-icon">📐</div>
+      <h3>Kinematics</h3>
+      <p class="chapter-subtitle">The Geometry of Motion</p>
+      <p>
+        Position, velocity, acceleration — describing how objects move through space
+        and time, before asking why. Covers URM, UAM, Free Fall, Projectile Motion,
+        Circular Motion, and Simple Harmonic Motion.
+      </p>
+      <a href="{{ '/kinematics/' | relative_url }}" class="btn btn-primary">
+        Explore Chapter →
       </a>
     </div>
   </div>
 
-  <div class="simulation-card">
-    <div class="card-icon">🚀</div>
-    <h3>Uniformly Accelerated Motion</h3>
-    <p>
-      Three vehicles start from rest and accelerate uniformly. Set each vehicle's
-      acceleration and watch how position and velocity grow over time.
-    </p>
-    <div class="card-actions">
-      <a href="{{ '/uniformly-accelerated-motion-theory/' | relative_url }}" class="btn btn-secondary">
-        📚 Theory &amp; Formulas
-      </a>
-      <a href="{{ '/uniformly-accelerated-motion.html' | relative_url }}" class="btn btn-primary">
-        ▶️ Launch Simulation
-      </a>
+  <div class="chapter-card chapter-coming-soon">
+    <div class="chapter-number">2</div>
+    <div class="chapter-body">
+      <div class="chapter-icon">⚡</div>
+      <h3>Terrestrial Dynamics</h3>
+      <p class="chapter-subtitle">The Introduction of Forces</p>
+      <p>
+        Newton's three laws, sliding friction, and fluid drag. The engine learns
+        <em>why</em> objects accelerate — F = m·a becomes the heart of every simulation.
+      </p>
+      <div class="card-badge">Coming Soon</div>
     </div>
   </div>
 
-
-  <div class="simulation-card">
-    <div class="card-icon">🍎</div>
-    <h3>Free Fall — Does Mass Matter?</h3>
-    <p>
-      Drop a lead ball and a feather simultaneously. Switch between vacuum and
-      air resistance, choose gravity on Earth, Mars or Jupiter, and discover
-      why mass has nothing to do with how fast things fall.
-    </p>
-    <div class="card-actions">
-      <a href="{{ '/free-fall-theory/' | relative_url }}" class="btn btn-secondary">
-        📚 Theory &amp; Formulas
-      </a>
-      <a href="{{ '/free-fall.html' | relative_url }}" class="btn btn-primary">
-        ▶️ Launch Simulation
-      </a>
+  <div class="chapter-card chapter-coming-soon">
+    <div class="chapter-number">3</div>
+    <div class="chapter-body">
+      <div class="chapter-icon">🌍</div>
+      <h3>Celestial Mechanics</h3>
+      <p class="chapter-subtitle">The Universe in Code</p>
+      <p>
+        Newton's law of universal gravitation, Kepler's three laws of orbital motion,
+        and the chaotic N-body problem: Sun–Earth–Moon.
+      </p>
+      <div class="card-badge">Coming Soon</div>
     </div>
   </div>
 
-  <div class="simulation-card">
-    <div class="card-icon">🎯</div>
-    <h3>Projectile Motion</h3>
-    <p>
-      Study the parabolic motion of a projectile launched with an initial
-      velocity and specific angle. Observe how gravity influences the trajectory.
-    </p>
-    <div class="card-actions">
-      <a href="{{ '/projectile-motion-theory/' | relative_url }}" class="btn btn-secondary">
-        📚 Theory &amp; Formulas
-      </a>
-      <a href="{{ '/projectile-motion.html' | relative_url }}" class="btn btn-primary">
-        ▶️ Launch Simulation
-      </a>
+  <div class="chapter-card chapter-coming-soon">
+    <div class="chapter-number">4</div>
+    <div class="chapter-body">
+      <div class="chapter-icon">🕐</div>
+      <h3>Mathematics of Time</h3>
+      <p class="chapter-subtitle">Solvers (Software Engineering)</p>
+      <p>
+        Euler, Euler–Cromer, Verlet, and Runge–Kutta (RK4) — why integration
+        accuracy matters and how to keep simulations numerically stable.
+      </p>
+      <div class="card-badge">Coming Soon</div>
     </div>
   </div>
 
-  <!-- Placeholder for future simulations -->
-  <div class="simulation-card coming-soon">
-    <div class="card-icon">🌊</div>
-    <h3>Harmonic Motion</h3>
-    <p>
-      Simulation of simple harmonic motion: oscillations, pendulums, and springs.
-    </p>
-    <div class="card-badge">Coming Soon</div>
+  <div class="chapter-card chapter-coming-soon">
+    <div class="chapter-number">5</div>
+    <div class="chapter-body">
+      <div class="chapter-icon">⚖️</div>
+      <h3>Statics &amp; Simple Machines</h3>
+      <p class="chapter-subtitle">Equilibrium and Mechanical Advantage</p>
+      <p>
+        Rigid body equilibrium, levers, pulleys, and gears — the classical
+        machines that amplify force through geometry.
+      </p>
+      <div class="card-badge">Coming Soon</div>
+    </div>
   </div>
 
-  <div class="simulation-card coming-soon">
-    <div class="card-icon">⚡</div>
-    <h3>Collisions</h3>
-    <p>
-      Study elastic and inelastic collisions between moving bodies.
-    </p>
-    <div class="card-badge">Coming Soon</div>
+  <div class="chapter-card chapter-coming-soon">
+    <div class="chapter-number">6</div>
+    <div class="chapter-body">
+      <div class="chapter-icon">🔋</div>
+      <h3>Conservation Laws</h3>
+      <p class="chapter-subtitle">The Engine's Quality Control</p>
+      <p>
+        Kinetic and potential energy, conservation of mechanical energy —
+        a perfectly accurate engine conserves E_total exactly.
+      </p>
+      <div class="card-badge">Coming Soon</div>
+    </div>
   </div>
+
+  <div class="chapter-card chapter-coming-soon">
+    <div class="chapter-number">7</div>
+    <div class="chapter-body">
+      <div class="chapter-icon">💥</div>
+      <h3>Collisions &amp; Tunneling</h3>
+      <p class="chapter-subtitle">Impulse, Detection, Resolution</p>
+      <p>
+        Linear momentum, elastic collision resolution between spheres,
+        and continuous collision detection to prevent fast objects tunneling through walls.
+      </p>
+      <div class="card-badge">Coming Soon</div>
+    </div>
+  </div>
+
+  <div class="chapter-card chapter-coming-soon">
+    <div class="chapter-number">8</div>
+    <div class="chapter-body">
+      <div class="chapter-icon">🌀</div>
+      <h3>Spring Systems</h3>
+      <p class="chapter-subtitle">Deformable Structures</p>
+      <p>
+        Hooke's law and mass–spring networks — the building block for simulating
+        soft bodies, ropes, and cloth.
+      </p>
+      <div class="card-badge">Coming Soon</div>
+    </div>
+  </div>
+
+  <div class="chapter-card chapter-coming-soon">
+    <div class="chapter-number">9</div>
+    <div class="chapter-body">
+      <div class="chapter-icon">🔩</div>
+      <h3>Rigid Body Dynamics</h3>
+      <p class="chapter-subtitle">Advanced Rotation</p>
+      <p>
+        Moment of inertia, torque τ = I·α, and rotation matrices —
+        the full treatment of spinning and tumbling extended bodies.
+      </p>
+      <div class="card-badge">Coming Soon</div>
+    </div>
+  </div>
+
 </section>
 
 <section class="about">

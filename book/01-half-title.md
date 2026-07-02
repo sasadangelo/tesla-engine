@@ -1,3 +1,3 @@
-# Tesla Engine
+# Tesla Engine {.unnumbered}
 
 *Interactive Physics Simulations*

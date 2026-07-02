@@ -3,8 +3,8 @@
 \vspace*{\fill}
 
 \begin{center}
-\textit{A tutti coloro che guardano il cielo\\
-e si chiedono come funziona.}
+\textit{To all those who look up at the sky\\
+and wonder how it works.}
 \end{center}
 
 \vspace*{\fill}

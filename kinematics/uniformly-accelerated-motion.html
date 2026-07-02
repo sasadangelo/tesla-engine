@@ -1,0 +1,96 @@
+---
+layout: simulation
+title: "Uniformly Accelerated Motion - Acceleration Race"
+sim_script: /assets/js/uniformly-accelerated-motion/uniformly-accelerated-motion-app.js
+---
+
+<aside class="panel">
+  <div class="nav-links">
+    <a href="{{ '/kinematics/' | relative_url }}" class="nav-link">← Kinematics</a>
+    <a href="{{ '/uniformly-accelerated-motion-theory/' | relative_url }}" class="nav-link">📚 Theory</a>
+  </div>
+
+  <h1>Uniformly Accelerated Motion</h1>
+
+  <div class="field">
+    <label for="acc1">🏎️ Red Racer Acceleration (m/s²)</label>
+    <input id="acc1" type="number" min="0" max="20" step="0.5" value="5" />
+  </div>
+
+  <div class="field">
+    <label for="acc2">🚙 Blue Cruiser Acceleration (m/s²)</label>
+    <input id="acc2" type="number" min="0" max="20" step="0.5" value="4" />
+  </div>
+
+  <div class="field">
+    <label for="acc3">🚕 Yellow Taxi Acceleration (m/s²)</label>
+    <input id="acc3" type="number" min="0" max="20" step="0.5" value="3" />
+  </div>
+
+  <div class="field">
+    <label for="distance">Race Distance (m)</label>
+    <input id="distance" type="number" min="100" max="1000" step="100" value="500" />
+  </div>
+
+  <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+    <button id="startButton" style="flex: 1;">🏁 Start</button>
+    <button id="resetButton" style="flex: 1; background: #374151;">🔄 Reset</button>
+  </div>
+
+  <div class="stats">
+    <div><strong>Time:</strong> <span id="timeValue">0.00</span> s</div>
+    <div><strong>🏎️ Red:</strong> <span id="pos1Value">0.0</span> m</div>
+    <div><strong>🚙 Blue:</strong> <span id="pos2Value">0.0</span> m</div>
+    <div><strong>🚕 Yellow:</strong> <span id="pos3Value">0.0</span> m</div>
+  </div>
+</aside>
+
+<main class="canvas-wrap">
+  <canvas id="scene"></canvas>
+</main>
+
+<section class="sim-doc">
+  <div class="sim-doc-inner">
+
+    <h2>🏁 Acceleration Race Application</h2>
+
+    <p>In our simulation, three vehicles race along parallel tracks: 🏎️ Red Racer, 🚙 Blue Cruiser, and 🚕 Yellow Taxi. Each vehicle starts from rest (v₀ = 0) and accelerates uniformly at a constant acceleration that you can set.</p>
+
+    <h3>1. Winner Prediction</h3>
+    <p>The vehicle with the highest acceleration will always reach the finish line first, since they all start from the same position and speed (zero).</p>
+    <p class="formula">If a₁ &gt; a₂ &gt; a₃, then vehicle 1 wins</p>
+
+    <h3>2. Finish Time Calculation</h3>
+    <p>For a race distance D and starting from rest, each vehicle's finish time is derived from x = ½·a·t²:</p>
+    <p class="formula">t_finish = √(2D / a)</p>
+    <p>Example: For D = 500m and a = 5 m/s², the finish time is √(1000/5) = √200 ≈ 14.14 seconds.</p>
+
+    <h3>3. Speed at Finish Line</h3>
+    <p>Using v² = 2·a·D, the speed each vehicle reaches at the finish line is:</p>
+    <p class="formula">v_finish = √(2 · a · D)</p>
+    <p>Example: For a = 5 m/s² and D = 500m → v = √5000 ≈ 70.7 m/s.</p>
+
+    <hr>
+
+    <h2>🧪 Practical Examples</h2>
+
+    <h3>Example 1: Equal Accelerations</h3>
+    <p><strong>Setup:</strong> All three vehicles at a = 4 m/s²</p>
+    <p><strong>Result:</strong> They all finish at the same time (tie)</p>
+    <p><strong>Time:</strong> t = √(2×500/4) = √250 ≈ 15.81 seconds</p>
+
+    <h3>Example 2: Double Acceleration</h3>
+    <p><strong>Setup:</strong> 🏎️ Red at 8 m/s², 🚙 Blue at 4 m/s²</p>
+    <p><strong>Result:</strong> Red finishes in √2 ≈ 1.41× less time</p>
+    <p><strong>Times:</strong></p>
+    <ul>
+      <li>🏎️ Red: t = √(1000/8) = √125 ≈ 11.18 seconds</li>
+      <li>🚙 Blue: t = √(1000/4) = √250 ≈ 15.81 seconds</li>
+    </ul>
+
+    <h3>Example 3: Gap Between Vehicles</h3>
+    <p><strong>Question:</strong> At t = 10s, how far apart are 🏎️ Red (a=5) and 🚕 Yellow (a=3)?</p>
+    <p><strong>Answer:</strong> x₁ = ½×5×100 = 250m, x₂ = ½×3×100 = 150m → gap = 100m</p>
+
+  </div>
+</section>
