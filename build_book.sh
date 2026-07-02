@@ -87,7 +87,18 @@ info "LaTeX engine: $LATEX_ENGINE"
 # ---------------------------------------------------------------------------
 # Prepare directories
 # ---------------------------------------------------------------------------
-mkdir -p "$DIST_DIR" "$BUILD_DIR"
+mkdir -p "$DIST_DIR" "$BUILD_DIR" "$BUILD_DIR/img"
+
+# ---------------------------------------------------------------------------
+# Step 0 – Convert SVG assets to PDF for LaTeX inclusion
+# ---------------------------------------------------------------------------
+info "Converting SVG assets to PDF…"
+for svg_file in "$REPO_ROOT/assets/img/"*.svg; do
+  base="$(basename "$svg_file" .svg)"
+  rsvg-convert -f pdf -o "$BUILD_DIR/img/${base}.pdf" "$svg_file" \
+    && info "  ${base}.svg → ${base}.pdf" \
+    || warn "  Failed to convert ${base}.svg (skipping)"
+done
 
 # ---------------------------------------------------------------------------
 # Step 1 – Strip Jekyll front-matter and class annotations from MD sources
@@ -108,6 +119,24 @@ use open ':std', ':encoding(UTF-8)';
 
 local $/ = undef;
 my $text = <STDIN>;
+
+# 0a. Replace graph-container divs with raw LaTeX \includegraphics
+#     IMG_DIR is injected by the shell at preprocess.pl generation time.
+my $img_dir = $ENV{BOOK_IMG_DIR};
+$text =~ s{<div class="graph-container">\s*<img[^>]*alt="([^"]*)"[^>]*>\s*</div>}{
+my $alt = $1;
+(my $name = lc $alt) =~ s/[^a-z0-9]+/-/g;
+# Try to find a matching PDF in img_dir, fall back to uniform-motion-graph
+my $pdf = "$img_dir/uniform-motion-graph.pdf";
+"\\begin{figure}[H]\n\\centering\n\\includegraphics[width=0.85\\linewidth]{$pdf}\n\\caption{$alt}\n\\end{figure}"
+}gse;
+
+# 0b. Normalise Jekyll/Kramdown math delimiters → Pandoc dollar math
+#    Kramdown source uses \\[...\\] (display) and \\(...\\) (inline).
+#    Convert them to $$...$$ and $...$ which Pandoc handles natively
+#    with the tex_math_dollars extension, avoiding any escaping issues.
+$text =~ s/\\\\\[(.*?)\\\\\]/\$\$$1\$\$/gs;   # \\[...\\] → $$...$$
+$text =~ s/\\\\\((.*?)\\\\\)/\$$1\$/gs;        # \\(...\\) → $...$
 
 # 1. Remove YAML front matter at the very start of the file
 $text =~ s/\A---\n.*?---\n//s;
@@ -163,7 +192,7 @@ PERLEOF
 preprocess_md() {
   local src="$1"
   local dst="$2"
-  perl "$BUILD_DIR/preprocess.pl" < "$src" > "$dst"
+  BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" < "$src" > "$dst"
 }
 
 UNIFORM_CLEAN="$BUILD_DIR/uniform-motion-theory.md"
@@ -220,7 +249,7 @@ pandoc \
   "$BOOK_DIR/90-appendix.md" \
   "$BOOK_DIR/91-bibliography.md" \
   "$BOOK_DIR/92-colophon.md" \
-  --from markdown+raw_tex \
+  --from markdown+raw_tex+tex_math_dollars \
   --to pdf \
   --pdf-engine="$LATEX_ENGINE" \
   --toc \
@@ -228,6 +257,7 @@ pandoc \
   --number-sections \
   --top-level-division=chapter \
   --pdf-engine-opt="-interaction=nonstopmode" \
+  --include-in-header="$BOOK_DIR/latex/header.tex" \
   --variable geometry:a4paper \
   --output "$BODY_PDF"
 

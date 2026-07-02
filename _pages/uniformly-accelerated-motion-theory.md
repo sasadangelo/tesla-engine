@@ -12,7 +12,7 @@ permalink: /uniformly-accelerated-motion-theory/
 
 - The velocity increases (or decreases) at a constant rate
 - The acceleration is constant and non-zero: a = const
-- The object starts from rest (v₀ = 0) in the classic case
+- The object starts from rest (\\(v_0 = 0\\)) in the classic case
 - Distances covered in successive equal time intervals grow linearly
 {: .theory-section }
 
@@ -23,7 +23,7 @@ permalink: /uniformly-accelerated-motion-theory/
 
 ### Velocity as a Function of Time
 
-v(t) = v₀ + a·t
+\\[v(t) = v_0 + a \cdot t\\]
 {: .formula-large }
 
 Where:
@@ -35,25 +35,25 @@ Where:
 
 ### Position as a Function of Time
 
-x(t) = x₀ + v₀·t + ½·a·t²
+\\[x(t) = x_0 + v_0 \cdot t + \tfrac{1}{2} a t^2\\]
 {: .formula-large }
 
-When starting from rest (v₀ = 0):
+When starting from rest (\\(v_0 = 0\\)):
 
-x(t) = x₀ + ½·a·t²
+\\[x(t) = x_0 + \tfrac{1}{2} a t^2\\]
 {: .formula-large }
 
 ### Velocity-Position Relation (no time needed)
 
-v² = v₀² + 2·a·(x - x₀)
+\\[v^2 = v_0^2 + 2 \cdot a \cdot (x - x_0)\\]
 {: .formula-large }
 
 ### Time to Cover a Distance (from rest)
 
-t = √(2·Δx / a)
+\\[t = \sqrt{\frac{2 \, \Delta x}{a}}\\]
 {: .formula-large }
 
-Derived by solving x = ½·a·t² for t.
+Derived by solving \\(x = \tfrac{1}{2} a t^2\\) for t.
 {: .theory-section }
 
 ---
@@ -68,7 +68,7 @@ In uniformly accelerated motion (from rest):
 - A steeper parabola means higher acceleration
 - The area under the velocity-time graph equals the displacement
 
-slope of v-t graph = Δv / Δt = a
+\\[\text{slope of v-t graph} = \frac{\Delta v}{\Delta t} = a\\]
 {: .formula }
 {: .theory-section }
 
@@ -95,7 +95,7 @@ slope of v-t graph = Δv / Δt = a
 
 **3. Predictable Motion** — all quantities (position, velocity) can be calculated exactly at any time
 
-**4. Builds on Uniform Motion** — when a = 0 the equations reduce to uniform motion (x = x₀ + v·t)
+**4. Builds on Uniform Motion** — when a = 0 the equations reduce to uniform motion (\\(x = x_0 + v \cdot t\\))
 {: .theory-section }
 
 ---

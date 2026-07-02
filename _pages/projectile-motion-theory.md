@@ -10,7 +10,7 @@ permalink: /projectile-motion-theory/
 
 **Projectile motion** is a form of motion experienced by an object that is projected into the air and moves under the influence of gravity. The path followed by a projectile is called its **trajectory**, which is a parabolic curve in the absence of air resistance.
 
-When an object is launched at an angle θ with an initial velocity v₀, it follows a curved path. The motion can be analyzed by breaking it into two independent components:
+When an object is launched at an angle \\(\theta\\) with an initial velocity \\(v_0\\), it follows a curved path. The motion can be analyzed by breaking it into two independent components:
 
 - **Horizontal motion:** Uniform motion (constant velocity)
 - **Vertical motion:** Uniformly accelerated motion (due to gravity)
@@ -23,46 +23,49 @@ When an object is launched at an angle θ with an initial velocity v₀, it foll
 
 ### Initial Velocity Components
 
-v₀ₓ = v₀ · cos(θ)
+\\[v_{0x} = v_0 \cdot \cos(\theta)\\]
 {: .formula }
 
-v₀ᵧ = v₀ · sin(θ)
+\\[v_{0y} = v_0 \cdot \sin(\theta)\\]
 {: .formula }
 
-Where v₀ is the initial velocity and θ is the launch angle.
+Where \\(v_0\\) is the initial velocity and \\(\theta\\) is the launch angle.
 {: .formula-description }
 
 ### Position Equations
 
-x(t) = v₀ₓ · t = v₀ · cos(θ) · t
+\\[x(t) = v_{0x} \cdot t = v_0 \cdot \cos(\theta) \cdot t\\]
 {: .formula }
 
-y(t) = v₀ᵧ · t - ½ · g · t² = v₀ · sin(θ) · t - ½ · g · t²
+\\[y(t) = v_{0y} \cdot t - \tfrac{1}{2} g t^2 = v_0 \cdot \sin(\theta) \cdot t - \tfrac{1}{2} g t^2\\]
 {: .formula }
 
-Where g = 9.81 m/s² is the acceleration due to gravity.
+Where \\(g = 9.81 \, \text{m/s}^2\\) is the acceleration due to gravity.
 {: .formula-description }
 
 ### Velocity Equations
 
-vₓ(t) = v₀ₓ = v₀ · cos(θ)
+\\[v_x(t) = v_{0x} = v_0 \cdot \cos(\theta)\\]
 {: .formula }
 
-vᵧ(t) = v₀ᵧ - g · t = v₀ · sin(θ) - g · t
+\\[v_y(t) = v_{0y} - g \cdot t = v_0 \cdot \sin(\theta) - g \cdot t\\]
 {: .formula }
 
 ### Important Parameters
 
-**Time of Flight:** T = (2 · v₀ · sin(θ)) / g
+**Time of Flight:**
+\\[T = \frac{2 \, v_0 \cdot \sin(\theta)}{g}\\]
 {: .formula }
 
-**Maximum Height:** H = (v₀² · sin²(θ)) / (2 · g)
+**Maximum Height:**
+\\[H = \frac{v_0^2 \cdot \sin^2(\theta)}{2g}\\]
 {: .formula }
 
-**Range:** R = (v₀² · sin(2θ)) / g
+**Range:**
+\\[R = \frac{v_0^2 \cdot \sin(2\theta)}{g}\\]
 {: .formula }
 
-The maximum range is achieved at θ = 45°.
+The maximum range is achieved at \\(\theta = 45°\\).
 {: .formula-description }
 {: .theory-section }
 

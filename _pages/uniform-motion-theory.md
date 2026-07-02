@@ -15,7 +15,7 @@ permalink: /uniform-motion-theory/
 - There is no acceleration (a = 0)
 - Equal distances are covered in equal time intervals
 
-This is the simplest type of motion in physics and serves as the foundation for understanding more complex motions.
+This is the simplest type of motion in physics and serves as a fundamental model for studying more complex motions.
 {: .theory-section }
 
 ---
@@ -23,9 +23,31 @@ This is the simplest type of motion in physics and serves as the foundation for 
 ## 📐 Mathematical Formulas
 {: .section-heading }
 
+### Velocity
+
+Velocity is the distance (displacement) traveled per unit time.
+
+v = S / t = constant
+
+In terms of initial and final position and time:
+
+\\[v = \frac{x_f - x_0}{t_f - t_0} = \frac{\Delta x}{\Delta t} = \text{constant}\\]
+{: .formula-large }
+
+Where:
+
+* x₀ = initial position at time t₀
+* \\(x_f\\) = final position at time \\(t_f\\)
+* \\(\Delta x = x_f - x_0\\) = displacement
+* \\(\Delta t = t_f - t_0\\) = time interval
+
+In uniform motion, \\(\Delta x / \Delta t\\) is the same for any interval: the velocity is constant.
+
 ### Position as a Function of Time
 
-x(t) = x₀ + v·t
+For an object moving with constant velocity v, the position at any time t is
+
+\\[x(t) = x_0 + v \cdot (t - t_0)\\]
 {: .formula-large }
 
 Where:
@@ -35,12 +57,17 @@ Where:
 - **v** = constant velocity
 - **t** = time elapsed
 
-### Velocity
+<div class="graph-container">
+  <img src="{{ '/assets/img/uniform-motion-graph.svg' | relative_url }}" alt="Position vs time graph: straight line showing x(t) = x₀ + v·t" style="width:100%;max-width:520px;display:block;margin:0 auto;">
+</div>
 
-v = Δx / Δt = constant
-{: .formula-large }
+The graph above shows **position x as a function of time t** for uniform motion:
 
-The velocity is the ratio of displacement (Δx) to time interval (Δt). In uniform motion, this ratio is always constant.
+- The line is **straight** — velocity is constant
+- The **slope** of the line equals the velocity (v)
+- A steeper slope means higher velocity
+- The **y-intercept** is the initial position (x₀)
+- Positive slope → motion in positive direction; negative slope → negative direction
 
 ### Acceleration
 
@@ -49,32 +76,47 @@ a = 0
 
 Since velocity is constant, there is no change in velocity over time, which means acceleration is zero.
 
-### Time to Cover a Distance
+### Reverse Formula
 
-t = Δx / v
+Starting from the definition of velocity:
+
+\\[v = \frac{\Delta x}{\Delta t}\\]
 {: .formula-large }
 
-Rearranging the position formula, we can calculate how long it takes to cover a certain distance at a given velocity.
-{: .theory-section }
+we can derive the inverse relations depending on the unknown quantity.
+
+#### ⏱ Time (\\(\Delta t\\))
+
+Solving for time:
+
+\\[\Delta t = \frac{\Delta x}{v}\\]
+{: .formula-large }
+
+or in expanded form:
+
+\\[t_f = \frac{x_f - x_0}{v} + t_0\\]
+{: .formula-large }
+
+👉 Interpretation:
+The time required to cover a distance increases with displacement and decreases with velocity.
+
+#### 📏 Distance (\\(\Delta x\\))
+
+Solving for displacement:
+
+\\[\Delta x = v \cdot \Delta t\\]
+{: .formula-large }
+
+or:
+
+\\[x_f = x_0 + v \cdot \Delta t\\]
+{: .formula-large }
+
+👉 Interpretation:
+In uniform motion, displacement grows linearly with time.
 
 ---
 
-## 📊 Position-Time Graph
-{: .section-heading }
-
-In uniform motion, the position-time graph is a **straight line**:
-
-- The slope of the line equals the velocity (v)
-- A steeper slope means higher velocity
-- The y-intercept is the initial position (x₀)
-- Positive slope = motion in positive direction
-- Negative slope = motion in negative direction
-
-slope = Δx / Δt = v
-{: .formula }
-{: .theory-section }
-
----
 
 ## 🔬 Real-World Applications
 {: .section-heading }

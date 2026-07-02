@@ -31,13 +31,13 @@ descent — he established a single, universal fact:
 
 That acceleration is called **g**, and near Earth's surface its value is:
 
-g ≈ 9.81 m/s²
+\\[g \approx 9.81 \, \text{m/s}^2\\]
 {: .formula-large }
 
 This is a **kinematic constant**: you can use it directly in the equations of motion,
 exactly as you used constant acceleration in Uniformly Accelerated Motion (UAM).
 The *reason* why mass cancels out — the deeper explanation involving forces — will be
-covered in **Chapter 2: Newton's Second Law (F = m·a)**.
+covered in **Chapter 2: Newton's Second Law** (\\(F = m \cdot a\\)).
 {: .theory-section }
 
 ---
@@ -45,26 +45,26 @@ covered in **Chapter 2: Newton's Second Law (F = m·a)**.
 ## 📊 Kinematic Equations of Free Fall
 {: .section-heading }
 
-Starting from rest (v₀ = 0), taking downward as positive:
+Starting from rest (\\(v_0 = 0\\)), taking downward as positive:
 
 ### Velocity as a function of time
 
-v(t) = g · t
+\\[v(t) = g \cdot t\\]
 {: .formula-large }
 
 ### Position (distance fallen) as a function of time
 
-y(t) = ½ · g · t²
+\\[y(t) = \tfrac{1}{2} g t^2\\]
 {: .formula-large }
 
 ### Time to fall a height h
 
-t = √(2h / g)
+\\[t = \sqrt{\frac{2h}{g}}\\]
 {: .formula-large }
 
 ### Velocity reached after falling a height h
 
-v = √(2 · g · h)
+\\[v = \sqrt{2 g h}\\]
 {: .formula-large }
 
 **Example:** Falling 100 m on Earth (g = 9.81 m/s²):
@@ -81,23 +81,23 @@ v = √(2 · g · h)
 In reality, any object moving through a fluid (air, water) experiences a **drag force**
 that opposes its motion. The linear drag model gives:
 
-F_drag = −b · v
+\\[F_{\text{drag}} = -b \cdot v\\]
 {: .formula-large }
 
 Where **b** depends on the properties of the **fluid** (density, viscosity) **and** the
-shape of the object (cross-sectional area, drag coefficient Cd):
+shape of the object (cross-sectional area, drag coefficient \\(C_d\\)):
 
-b = ρ · Cd · A
+\\[b = \rho \cdot C_d \cdot A\\]
 {: .formula-large }
 
 The net downward force on a falling body with air resistance is:
 
-F_net = m · g − b · v
+\\[F_{\text{net}} = m \cdot g - b \cdot v\\]
 {: .formula-large }
 
 Applying Newton's Second Law:
 
-a = g − (b/m) · v
+\\[a = g - \frac{b}{m} \cdot v\\]
 {: .formula-large }
 
 This is why a **feather** (large Cd·A, tiny m) decelerates quickly while a **lead ball**
@@ -107,7 +107,7 @@ This is why a **feather** (large Cd·A, tiny m) decelerates quickly while a **le
 
 When drag equals gravity the acceleration reaches zero and the body falls at constant speed:
 
-F_net = 0   →   m·g = b·v_t   →   **v_t = m·g / b**
+\\[F_{\text{net}} = 0 \implies m \cdot g = b \cdot v_t \implies v_t = \frac{m \cdot g}{b}\\]
 {: .formula-large }
 
 A heavier or more aerodynamic object has a higher terminal velocity; a lighter or less

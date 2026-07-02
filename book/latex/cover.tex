@@ -3,7 +3,7 @@
 \documentclass[a4paper]{article}
 \usepackage[top=0cm,bottom=0cm,left=0cm,right=0cm]{geometry}
 \usepackage{xcolor}
-\usepackage{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -42,15 +42,6 @@
   \node[anchor=north, text=white!70!coverblue, font=\normalsize]
     at ([yshift=-6.2cm]current page.north)
     {First Edition — 2026};
-
-  % Decorative physics formula block (centre of page)
-  \node[anchor=center, text=coverblue!70!black, font=\large, align=left]
-    at (current page.center)
-    {
-      $x(t) = x_0 + v \cdot t$\\[6pt]
-      $y(t) = v_0 \sin\theta\cdot t - \tfrac{1}{2}g t^2$\\[6pt]
-      $R = \dfrac{v_0^2 \sin 2\theta}{g}$
-    };
 
   % Author
   \node[anchor=south, text=coverblue, font=\large\itshape]
