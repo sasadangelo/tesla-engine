@@ -15,6 +15,7 @@
 | 1.4 | ~~**Projectile Motion (Parabolic)**~~ | ~~Two-dimensional integration of URM + free fall.~~ | **Basic Trigonometry** — sine and cosine to decompose the initial velocity vector into X and Y Cartesian components. |
 | 1.5 | **Uniform Circular Motion (UCM)** | Constant-speed motion along a circle — introduces angular velocity ω, period T, and frequency f. | **Angular velocity** ω = Δθ/Δt, centripetal acceleration a = ω²·r. |
 | 1.6 | **Simple Harmonic Motion — Pendulum** | SHM as the projection of UCM: θ(t) = θ₀·cos(ωt) with ω = √(g/L). Interactive pendulum simulation. | **Period** T = 2π√(L/g) — bridge between circular motion and oscillation. |
+| 1.7 | **Galilean Relativity & Reference Frames** | Inertial vs. non-inertial frames. No privileged frame — all inertial observers are equivalent. Simulation: a ball dropped inside a moving train appears to fall vertically for the passenger but traces a parabola for the trackside observer. Toggle button to switch between the two reference frames in real time. | **Galilean transformations** — x' = x − vt, t' = t; **relative velocity composition**: v'⃗ = v⃗ − u⃗. |
 
 ---
 

@@ -27,7 +27,8 @@ This is the simplest type of motion in physics and serves as a fundamental model
 
 Velocity is the distance (displacement) traveled per unit time.
 
-v = S / t = constant
+\\[v = \frac{S}{t} = constant\\]
+{: .formula-large }
 
 In terms of initial and final position and time:
 
@@ -41,7 +42,7 @@ Where:
 * \\(\Delta x = x_f - x_0\\) = displacement
 * \\(\Delta t = t_f - t_0\\) = time interval
 
-In uniform motion, \\(\Delta x / \Delta t\\) is the same for any interval: the velocity is constant.
+In uniform motion, \\(\Delta x / \Delta t\\) is the same for any equal interval: the velocity is constant.
 
 ### Position as a Function of Time
 
@@ -58,7 +59,7 @@ Where:
 - **t** = time elapsed
 
 <div class="graph-container">
-  <img src="{{ '/assets/img/uniform-motion-graph.svg' | relative_url }}" alt="Position vs time graph: straight line showing x(t) = x₀ + v·t" style="width:100%;max-width:520px;display:block;margin:0 auto;">
+  <img src="{{ '/assets/img/uniform-motion-graph.svg' | relative_url }}" alt="Position vs time graph for uniform motion" style="width:100%;max-width:520px;display:block;margin:0 auto;">
 </div>
 
 The graph above shows **position x as a function of time t** for uniform motion:
@@ -87,7 +88,7 @@ we can derive the inverse relations depending on the unknown quantity.
 
 #### ⏱ Time (\\(\Delta t\\))
 
-Solving for time:
+The time required to travel a distance \\(\Delta x\\) at constant velocity v is:
 
 \\[\Delta t = \frac{\Delta x}{v}\\]
 {: .formula-large }
@@ -102,7 +103,7 @@ The time required to cover a distance increases with displacement and decreases 
 
 #### 📏 Distance (\\(\Delta x\\))
 
-Solving for displacement:
+The distance traveled in a time \\(\Delta t\\) at constant velocity v is:
 
 \\[\Delta x = v \cdot \Delta t\\]
 {: .formula-large }

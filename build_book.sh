@@ -123,11 +123,10 @@ my $text = <STDIN>;
 # 0a. Replace graph-container divs with raw LaTeX \includegraphics
 #     IMG_DIR is injected by the shell at preprocess.pl generation time.
 my $img_dir = $ENV{BOOK_IMG_DIR};
-$text =~ s{<div class="graph-container">\s*<img[^>]*alt="([^"]*)"[^>]*>\s*</div>}{
-my $alt = $1;
-(my $name = lc $alt) =~ s/[^a-z0-9]+/-/g;
-# Try to find a matching PDF in img_dir, fall back to uniform-motion-graph
-my $pdf = "$img_dir/uniform-motion-graph.pdf";
+$text =~ s{<div class="graph-container">\s*<img[^>]*src="[^"]*?/([^"/]+\.svg)[^"]*"[^>]*alt="([^"]*)"[^>]*>\s*</div>}{
+my ($svgfile, $alt) = ($1, $2);
+(my $base = $svgfile) =~ s/\.svg$//;
+my $pdf = "$img_dir/${base}.pdf";
 "\\begin{figure}[H]\n\\centering\n\\includegraphics[width=0.85\\linewidth]{$pdf}\n\\caption{$alt}\n\\end{figure}"
 }gse;
 

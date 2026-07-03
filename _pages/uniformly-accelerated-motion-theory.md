@@ -21,21 +21,57 @@ permalink: /uniformly-accelerated-motion-theory/
 ## 📐 Mathematical Formulas
 {: .section-heading }
 
+### Acceleration
+
+Acceleration is the change in velocity per unit time.
+
+\\[a = \frac{v}{t} = constant\\]
+
+In terms of initial and final position and time:
+
+\\[v = \frac{v_f - v_0}{t_f - t_0} = \frac{\Delta v}{\Delta t} = \text{constant}\\]
+{: .formula-large }
+
+Where:
+
+* v₀ = initial velocity at time t₀
+* \\(v_f\\) = final velocity at time \\(t_f\\)
+* \\(\Delta v = v_f - v_0\\) = velocity change
+* \\(\Delta t = t_f - t_0\\) = time interval
+
+In uniform accelerated motion, \\(\Delta v / \Delta t\\) is the same for any equal interval: the acceleration is constant.
+
 ### Velocity as a Function of Time
 
-\\[v(t) = v_0 + a \cdot t\\]
+For an object moving with constant acceleration a, the velocity at any time t is
+
+\\[v(t) = v_0 + a \cdot (t - t_0)\\]
 {: .formula-large }
 
 Where:
 
 - **v(t)** = velocity at time t
-- **v₀** = initial velocity (= 0 when starting from rest)
+- **v₀** = initial velocity at time  t₀ (= 0 when starting from rest)
 - **a** = constant acceleration
 - **t** = time elapsed
 
+<div class="graph-container">
+  <img src="{{ '/assets/img/uniformly-accelerated-motion-v-graph.svg' | relative_url }}" alt="Velocity vs time graph for uniformly accelerated motion" style="width:100%;max-width:520px;display:block;margin:0 auto;">
+</div>
+
+The graph above shows **velocity v as a function of time t** for uniformly accelerated motion:
+
+- The line is **straight** — acceleration is constant
+- The **slope** of the line equals the acceleration (a)
+- A steeper slope means higher acceleration
+- The **y-intercept** is the initial velocity (v₀)
+- Positive slope → motion in positive direction; negative slope → negative direction
+
 ### Position as a Function of Time
 
-\\[x(t) = x_0 + v_0 \cdot t + \tfrac{1}{2} a t^2\\]
+For an object moving with constant acceleration a, the position at any time t is
+
+\\[x(t) = x_0 + v_0 \cdot (t - t_0) + \tfrac{1}{2} a (t - t_0)^2\\]
 {: .formula-large }
 
 When starting from rest (\\(v_0 = 0\\)):
@@ -43,17 +79,47 @@ When starting from rest (\\(v_0 = 0\\)):
 \\[x(t) = x_0 + \tfrac{1}{2} a t^2\\]
 {: .formula-large }
 
-### Velocity-Position Relation (no time needed)
+<div class="graph-container">
+  <img src="{{ '/assets/img/uniformly-accelerated-motion-x-graph.svg' | relative_url }}" alt="Position vs time graph for uniformly accelerated motion" style="width:100%;max-width:520px;display:block;margin:0 auto;">
+</div>
+
+The graph above shows **position x as a function of time t** for uniformly accelerated motion:
+
+- The curve is a **parabola** — position grows as t²
+- The **slope at any point** equals the instantaneous velocity v(t)
+- A steeper curve means higher acceleration
+- The **y-intercept** is the initial position (x₀)
+- When v₀ = 0 the parabola starts flat (tangent horizontal at t₀)
+
+---
+
+> 💡 **Geometric interpretation via the velocity-time graph:**
+> Looking at the v-t graph, the displacement \\(x(t) - x_0\\) equals the **area under the straight line** between \\(t_0\\) and \\(t\\).
+> That area is made up of two parts:
+> - a **rectangle** of width \\((t - t_0)\\) and height \\(v_0\\), contributing \\(v_0 \cdot (t - t_0)\\)
+> - a **triangle** of base \\((t - t_0)\\) and height \\(a \cdot (t - t_0)\\), contributing \\(\tfrac{1}{2} \cdot a \cdot (t - t_0)^2\\)
+>
+> Adding both areas gives exactly \\(x(t) - x_0 = v_0 \cdot (t-t_0) + \tfrac{1}{2} a (t-t_0)^2\\).
+
+### Reverse Formula
+
+#### Velocity-Position Relation (no time needed)
+
+When time is not known, the velocity reached after covering a distance \\(x - x_0\\) starting from \\(v_0\\) with acceleration \\(a\\) is:
 
 \\[v^2 = v_0^2 + 2 \cdot a \cdot (x - x_0)\\]
 {: .formula-large }
 
-### Time to Cover a Distance (from rest)
+👉 Example: if a car accelerates at \\(3\text{ m/s}^2\\) over \\(100\text{ m}\\) starting from rest, its final speed is \\(v = \sqrt{2 \cdot 3 \cdot 100} \approx 24.5\text{ m/s}\\).
+
+#### Time to Cover a Distance (from rest)
+
+The time needed to cover a distance \\(\Delta x\\) starting from rest under constant acceleration a is:
 
 \\[t = \sqrt{\frac{2 \, \Delta x}{a}}\\]
 {: .formula-large }
 
-Derived by solving \\(x = \tfrac{1}{2} a t^2\\) for t.
+👉 Derived by solving \\(x = \tfrac{1}{2} a t^2\\) for t.
 {: .theory-section }
 
 ---
