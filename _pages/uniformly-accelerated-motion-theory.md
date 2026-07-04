@@ -74,6 +74,9 @@ For an object moving with constant acceleration a, the position at any time t is
 \\[x(t) = x_0 + v_0 \cdot (t - t_0) + \tfrac{1}{2} a (t - t_0)^2\\]
 {: .formula-large }
 
+> 🧮 **Want to see where this formula comes from?**
+> Follow the step-by-step algebraic derivation in the [Math JIT lesson]({{ '/uniformly-accelerated-motion-math-jit/' | relative_url }}).
+
 When starting from rest (\\(v_0 = 0\\)):
 
 \\[x(t) = x_0 + \tfrac{1}{2} a t^2\\]
