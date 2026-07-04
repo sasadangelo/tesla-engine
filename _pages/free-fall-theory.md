@@ -42,10 +42,44 @@ covered in **Chapter 2: Newton's Second Law** (\\(F = m \cdot a\\)).
 
 ---
 
+## 🌐 Does g Really Stay Constant?
+{: .section-heading }
+
+Strictly speaking, gravity weakens slightly as you move away from Earth's centre —
+a consequence of Newton's Law of Universal Gravitation, where gravitational attraction is
+**inversely proportional to the square of the distance**. In practice, however, the change
+is tiny for heights we normally deal with:
+
+| Location | Altitude | g (m/s²) |
+|----------|----------|-----------|
+| Sea level | 0 km | 9.81 |
+| Mount Everest summit | ~9 km | ~9.78 |
+| ISS orbit | ~400 km | ~8.7 |
+
+Even at 400 km altitude the ISS still experiences about **90 % of surface gravity**.
+Astronauts feel weightless not because gravity is absent, but because the station is in a
+constant state of **free fall** around Earth (orbital motion).
+
+Near the surface, the variation is negligible, so we safely treat \\(g = 9.81 \, \text{m/s}^2\\) as constant.
+{: .theory-section }
+
+---
+
 ## 📊 Kinematic Equations of Free Fall
 {: .section-heading }
 
-Starting from rest (\\(v_0 = 0\\)), taking downward as positive:
+Free fall is a **[uniformly accelerated motion]({{ '/uniformly-accelerated-motion-theory/' | relative_url }})**, so both velocity and position obey the
+general UAM equations (with \\(t_0 = 0\\)):
+
+\\[v(t) = v_0 + a \cdot t\\]
+{: .formula-large }
+
+\\[y(t) = y_0 + v_0 \cdot t + \tfrac{1}{2} a \cdot t^2\\]
+{: .formula-large }
+
+Substituting the free-fall conditions — initial position \\(y_0 = 0\\), initial velocity
+\\(v_0 = 0\\), and acceleration \\(a = g\\) — we obtain the simplified equations below
+(taking downward as positive).
 
 ### Velocity as a function of time
 
@@ -57,20 +91,26 @@ Starting from rest (\\(v_0 = 0\\)), taking downward as positive:
 \\[y(t) = \tfrac{1}{2} g t^2\\]
 {: .formula-large }
 
-### Time to fall a height h
+### Reverse Formulas
+
+#### Time to fall a height h
+
+Solving \\(h = \tfrac{1}{2} g t^2\\) for \\(t\\):
 
 \\[t = \sqrt{\frac{2h}{g}}\\]
 {: .formula-large }
 
-### Velocity reached after falling a height h
+#### Velocity reached after falling a height h
+
+Combining the two kinematic equations to eliminate \\(t\\):
 
 \\[v = \sqrt{2 g h}\\]
 {: .formula-large }
 
-**Example:** Falling 100 m on Earth (g = 9.81 m/s²):
+👉 **Example:** Falling 100 m on Earth (g = 9.81 m/s²):
 
-- Time: t = √(200 / 9.81) ≈ 4.52 s
-- Final speed: v = √(2 × 9.81 × 100) ≈ 44.3 m/s ≈ 159 km/h
+- Time: \\(t = \sqrt{200 / 9.81} \approx 4.52\text{ s}\\)
+- Final speed: \\(v = \sqrt{2 \times 9.81 \times 100} \approx 44.3\text{ m/s} \approx 159\text{ km/h}\\)
 {: .theory-section }
 
 ---
@@ -78,45 +118,28 @@ Starting from rest (\\(v_0 = 0\\)), taking downward as positive:
 ## 💨 The Role of Air Resistance
 {: .section-heading }
 
-In reality, any object moving through a fluid (air, water) experiences a **drag force**
-that opposes its motion. The linear drag model gives:
+Galileo's result — all objects fall at the same rate — holds perfectly in a **vacuum**.
+In everyday life, however, we are surrounded by air, and air pushes back against any
+falling object. This is why a feather floats gently down while a stone drops like, well,
+a stone.
 
-\\[F_{\text{drag}} = -b \cdot v\\]
-{: .formula-large }
+That everyday experience is actually **misleading**: it is not the *mass* that makes the
+stone fall faster, it is the **shape and size** of the object relative to its mass. A
+crumpled sheet of paper falls noticeably faster than a flat one of identical mass,
+purely because of its smaller surface catching air.
 
-Where **b** depends on the properties of the **fluid** (density, viscosity) **and** the
-shape of the object (cross-sectional area, drag coefficient \\(C_d\\)):
+In a vacuum the illusion vanishes: a feather and a lead ball released together hit the
+ground at exactly the same moment — exactly as Galileo claimed. This was famously
+demonstrated on the Moon by Apollo 15 astronaut David Scott in 1971, and you can
+reproduce it yourself in the simulation by setting air resistance to zero.
 
-\\[b = \rho \cdot C_d \cdot A\\]
-{: .formula-large }
-
-The net downward force on a falling body with air resistance is:
-
-\\[F_{\text{net}} = m \cdot g - b \cdot v\\]
-{: .formula-large }
-
-Applying Newton's Second Law:
-
-\\[a = g - \frac{b}{m} \cdot v\\]
-{: .formula-large }
-
-This is why a **feather** (large Cd·A, tiny m) decelerates quickly while a **lead ball**
-(small Cd·A relative to m) barely feels the drag.
-
-### Terminal Velocity
-
-When drag equals gravity the acceleration reaches zero and the body falls at constant speed:
-
-\\[F_{\text{net}} = 0 \implies m \cdot g = b \cdot v_t \implies v_t = \frac{m \cdot g}{b}\\]
-{: .formula-large }
-
-A heavier or more aerodynamic object has a higher terminal velocity; a lighter or less
-aerodynamic one has a lower terminal velocity.
+> 💡 The mathematical treatment of drag forces (drag coefficient, terminal velocity)
+> will be covered in a later chapter on **Newton's Laws**.
 {: .theory-section }
 
 ---
 
-## 🌍 Gravity on Other Worlds
+## 🌍 Gravity on Other Planets or Deep Space
 {: .section-heading }
 
 The acceleration of free fall depends on the planet:
