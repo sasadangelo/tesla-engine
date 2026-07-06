@@ -32,6 +32,11 @@ When an object is launched at an angle \\(\theta\\) with an initial velocity \\(
 Where \\(v_0\\) is the initial velocity and \\(\theta\\) is the launch angle.
 {: .formula-description }
 
+> 🧩 **Confused by Sine and Cosine?**
+> If you don't understand where these formulas come from, check out our quick [Math JIT: The Shadow Analogy]({{ '/projectile-motion-math-jit/' | relative_url }}) to visualize how vectors are split using shadows.
+{: .math-jit-box }
+
+
 ### Position Equations
 
 \\[x(t) = v_{0x} \cdot t = v_0 \cdot \cos(\theta) \cdot t\\]

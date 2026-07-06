@@ -640,6 +640,26 @@ canvas {
     font-size: 18px;
 }
 
+/* Math JIT callout box */
+.math-jit-box {
+    background: #1a1a2e;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin: 24px 0;
+    border-left: 4px solid #7c3aed;
+    font-size: 15px;
+    color: #d1d5db;
+}
+
+.math-jit-box strong {
+    color: #a78bfa;
+}
+
+.math-jit-box a {
+    color: #818cf8;
+    text-decoration: underline;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     body:not(.home-page):not(.theory-page) {

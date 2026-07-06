@@ -196,14 +196,18 @@ preprocess_md() {
 
 UNIFORM_CLEAN="$BUILD_DIR/uniform-motion-theory.md"
 ACCELERATED_CLEAN="$BUILD_DIR/uniformly-accelerated-motion-theory.md"
+ACCELERATED_MATHJIT_CLEAN="$BUILD_DIR/uniformly-accelerated-motion-math-jit.md"
 FREE_FALL_CLEAN="$BUILD_DIR/free-fall-theory.md"
 PROJECTILE_CLEAN="$BUILD_DIR/projectile-motion-theory.md"
+PROJECTILE_MATHJIT_CLEAN="$BUILD_DIR/projectile-motion-math-jit.md"
 
 write_preprocess_script
 preprocess_md "$PAGES_DIR/uniform-motion-theory.md"               "$UNIFORM_CLEAN"
 preprocess_md "$PAGES_DIR/uniformly-accelerated-motion-theory.md" "$ACCELERATED_CLEAN"
+preprocess_md "$PAGES_DIR/uniformly-accelerated-motion-math-jit.md" "$ACCELERATED_MATHJIT_CLEAN"
 preprocess_md "$PAGES_DIR/free-fall-theory.md"                    "$FREE_FALL_CLEAN"
 preprocess_md "$PAGES_DIR/projectile-motion-theory.md"            "$PROJECTILE_CLEAN"
+preprocess_md "$PAGES_DIR/projectile-motion-math-jit.md"          "$PROJECTILE_MATHJIT_CLEAN"
 
 # ---------------------------------------------------------------------------
 # Step 2 – (Optional) Build the standalone cover PDF with pdflatex/tikz
@@ -226,8 +230,10 @@ fi
 #            04  toc-placeholder   (raw LaTeX \tableofcontents)
 #            10  chapter 1 – uniform motion
 #            20  chapter 2 – uniformly accelerated motion
+#            21  math jit – deriving the position formula
 #            30  chapter 3 – free fall
 #            40  chapter 4 – projectile motion
+#            41  math jit – splitting a vector (shadow analogy)
 #            90  appendix
 #            91  bibliography
 #            92  colophon          (raw LaTeX block)
@@ -243,8 +249,10 @@ pandoc \
   "$BOOK_DIR/03-preface.md" \
   "$UNIFORM_CLEAN" \
   "$ACCELERATED_CLEAN" \
+  "$ACCELERATED_MATHJIT_CLEAN" \
   "$FREE_FALL_CLEAN" \
   "$PROJECTILE_CLEAN" \
+  "$PROJECTILE_MATHJIT_CLEAN" \
   "$BOOK_DIR/90-appendix.md" \
   "$BOOK_DIR/91-bibliography.md" \
   "$BOOK_DIR/92-colophon.md" \
