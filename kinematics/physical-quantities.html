@@ -1,0 +1,152 @@
+---
+layout: simulation
+title: "Velocity Measurement — How Precise is Your Speed?"
+sim_script: /assets/js/physical-quantities/physical-quantities-app.js
+---
+
+<aside class="panel">
+  <div class="nav-links">
+    <a href="{{ '/kinematics/' | relative_url }}" class="nav-link">← Kinematics</a>
+    <a href="{{ '/physical-quantities-theory/' | relative_url }}" class="nav-link">📚 Theory</a>
+  </div>
+
+  <h1>Velocity Measurement</h1>
+
+  <div class="field">
+    <label for="trueDistance">📏 True distance (m)</label>
+    <input id="trueDistance" type="number" min="1" max="500" step="1" value="100" />
+  </div>
+
+  <div class="field">
+    <label for="rulerResolution">📐 Ruler resolution (m)</label>
+    <select id="rulerResolution">
+      <option value="1">1 m — tape measure, coarse</option>
+      <option value="0.1" selected>0.1 m — tape measure, fine</option>
+      <option value="0.01">0.01 m — vernier calliper</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="trueTime">⏱️ True time (s)</label>
+    <input id="trueTime" type="number" min="0.1" max="60" step="0.1" value="8.0" />
+  </div>
+
+  <div class="field">
+    <label for="stopwatchResolution">⏱️ Stopwatch resolution (s)</label>
+    <select id="stopwatchResolution">
+      <option value="1">1 s — wall clock</option>
+      <option value="0.1" selected>0.1 s — digital stopwatch</option>
+      <option value="0.01">0.01 s — precision timer</option>
+    </select>
+  </div>
+
+  <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+    <button id="measureButton" style="flex: 1;">📏 Measure!</button>
+    <button id="resetButton" style="flex: 1; background: #374151;">🔄 Reset</button>
+  </div>
+
+  <div class="stats" id="statsPanel" style="display:none;">
+    <div style="border-bottom:1px solid #374151;margin-bottom:8px;padding-bottom:8px;">
+      <strong>Measured distance</strong><br>
+      <span id="measuredDist">—</span>
+    </div>
+    <div style="border-bottom:1px solid #374151;margin-bottom:8px;padding-bottom:8px;">
+      <strong>Measured time</strong><br>
+      <span id="measuredTime">—</span>
+    </div>
+    <div style="border-bottom:1px solid #374151;margin-bottom:8px;padding-bottom:8px;">
+      <strong>Calculated velocity</strong><br>
+      <span id="calcVelocity">—</span>
+    </div>
+    <div style="border-bottom:1px solid #374151;margin-bottom:8px;padding-bottom:8px;">
+      <strong>Absolute error Δv</strong><br>
+      <span id="absError">—</span>
+    </div>
+    <div style="border-bottom:1px solid #374151;margin-bottom:8px;padding-bottom:8px;">
+      <strong>Relative error εᵣ%</strong><br>
+      <span id="relError">—</span>
+    </div>
+    <div>
+      <strong>True velocity</strong><br>
+      <span id="trueVelocity">—</span>
+    </div>
+  </div>
+</aside>
+
+<main class="canvas-wrap">
+  <canvas id="scene"></canvas>
+</main>
+
+<section class="sim-doc">
+  <div class="sim-doc-inner">
+
+    <h2>🎮 How to Use the Simulation</h2>
+
+    <h3>Step 1: Set the true values</h3>
+    <p>
+      Enter the <strong>true distance</strong> the car travels and the <strong>true time</strong>
+      it takes. These are the "real" values that exist in nature — your instruments can only
+      approximate them.
+    </p>
+
+    <h3>Step 2: Choose instrument resolutions</h3>
+    <p>
+      Select a ruler and a stopwatch from the dropdowns. A coarser instrument (larger resolution)
+      produces a larger absolute error <strong>Δx = resolution / 2</strong>.
+    </p>
+
+    <h3>Step 3: Click "Measure!"</h3>
+    <p>
+      The simulation animates the car driving across the track. When it stops, the instruments
+      display their readings — slightly different from the true values because of rounding to
+      the nearest scale division. The stats panel shows the full error calculation.
+    </p>
+
+    <h3>Step 4: Experiment</h3>
+    <p>
+      Try switching to a coarser stopwatch and observe how the relative error on velocity jumps.
+      Notice that a small timing error can dominate over a large distance error — this is why
+      <strong>εᵣ(v) = εᵣ(Δx) + εᵣ(Δt)</strong> is the key formula.
+    </p>
+
+    <hr>
+
+    <h2>📐 The Maths Behind the Simulation</h2>
+
+    <h3>Instrument reading</h3>
+    <p>
+      Each instrument rounds the true value to the nearest scale division (resolution).
+      The absolute error is half that resolution:
+    </p>
+    <p class="formula">Δx = resolution / 2 &nbsp;&nbsp; Δt = resolution / 2</p>
+
+    <h3>Calculated velocity</h3>
+    <p class="formula">v = x_measured / t_measured</p>
+
+    <h3>Relative error propagation</h3>
+    <p class="formula">εᵣ(v) = Δx / x_measured + Δt / t_measured</p>
+
+    <h3>Absolute error on velocity</h3>
+    <p class="formula">Δv = εᵣ(v) × v</p>
+
+    <h3>Final result notation</h3>
+    <p class="formula">v = (v_measured ± Δv) m/s</p>
+
+    <hr>
+
+    <h2>🧪 Suggested Experiments</h2>
+
+    <h3>Experiment 1 — Distance dominates</h3>
+    <p><strong>Setup:</strong> distance = 5 m, time = 8 s, ruler = 1 m, stopwatch = 0.01 s</p>
+    <p><strong>Expected:</strong> Δx/x ≈ 10 %, Δt/t ≈ 0.06 % — the coarse ruler dominates the error budget.</p>
+
+    <h3>Experiment 2 — Time dominates</h3>
+    <p><strong>Setup:</strong> distance = 200 m, time = 0.5 s, ruler = 0.1 m, stopwatch = 0.1 s</p>
+    <p><strong>Expected:</strong> Δx/x ≈ 0.025 %, Δt/t ≈ 10 % — a very short time interval is hard to measure.</p>
+
+    <h3>Experiment 3 — Best precision</h3>
+    <p><strong>Setup:</strong> distance = 100 m, time = 8 s, ruler = 0.01 m, stopwatch = 0.01 s</p>
+    <p><strong>Expected:</strong> total εᵣ(v) &lt; 0.1 % — both instruments are precise and the true value lies well inside the error bar.</p>
+
+  </div>
+</section>
