@@ -94,6 +94,17 @@ Projectile motion principles are used in sports (basketball, golf), military app
 
 ---
 
+## 📝 Practice Exercises
+{: .section-heading }
+
+Ready to put these formulas to work? Solve 20 problems of increasing difficulty, from ⭐ warm-ups to ⭐⭐⭐⭐⭐ expert challenges — with full worked solutions available afterward.
+{: .theory-section }
+
+[Go to Exercises →]({{ '/projectile-motion-exercises/' | relative_url }}){: .btn .btn-primary }
+{: .action-buttons }
+
+---
+
 [← Back to Home]({{ '/' | relative_url }}){: .btn .btn-secondary }
 [Launch Simulation →]({{ '/projectile-motion.html' | relative_url }}){: .btn .btn-primary }
 {: .action-buttons }

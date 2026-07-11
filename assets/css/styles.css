@@ -660,6 +660,70 @@ canvas {
     text-decoration: underline;
 }
 
+/* -------------------------------------------------------------------------
+ * Exercises & Solutions pages
+ * -------------------------------------------------------------------------*/
+
+.difficulty {
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #fbbf24;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.exercise-item {
+    background: #111827;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border-left: 4px solid #2563eb;
+    color: #d1d5db;
+}
+
+.exercise-item p {
+    margin: 0;
+    color: #d1d5db;
+}
+
+.exercise-item .ex-num {
+    color: #60a5fa;
+    margin-right: 6px;
+}
+
+.tier-1 .exercise-item { border-left-color: #10b981; }
+.tier-2 .exercise-item { border-left-color: #38bdf8; }
+.tier-3 .exercise-item { border-left-color: #fbbf24; }
+.tier-4 .exercise-item { border-left-color: #f97316; }
+.tier-5 .exercise-item { border-left-color: #ef4444; }
+
+.solution-item {
+    background: #111827;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid #8b5cf6;
+}
+
+.solution-item p {
+    color: #d1d5db;
+    margin-bottom: 10px;
+}
+
+.solution-item p:last-child {
+    margin-bottom: 0;
+}
+
+.solution-item .sol-num {
+    color: #a78bfa;
+}
+
+.solution-item .final-answer {
+    color: #6ee7b7;
+    font-weight: 600;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     body:not(.home-page):not(.theory-page) {
