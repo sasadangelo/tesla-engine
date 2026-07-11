@@ -194,20 +194,38 @@ preprocess_md() {
   BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" < "$src" > "$dst"
 }
 
+PHYSICAL_QUANTITIES_CLEAN="$BUILD_DIR/physical-quantities-theory.md"
 UNIFORM_CLEAN="$BUILD_DIR/uniform-motion-theory.md"
 ACCELERATED_CLEAN="$BUILD_DIR/uniformly-accelerated-motion-theory.md"
-ACCELERATED_MATHJIT_CLEAN="$BUILD_DIR/uniformly-accelerated-motion-math-jit.md"
 FREE_FALL_CLEAN="$BUILD_DIR/free-fall-theory.md"
 PROJECTILE_CLEAN="$BUILD_DIR/projectile-motion-theory.md"
-PROJECTILE_MATHJIT_CLEAN="$BUILD_DIR/projectile-motion-math-jit.md"
 
 write_preprocess_script
+preprocess_md "$PAGES_DIR/physical-quantities-theory.md"          "$PHYSICAL_QUANTITIES_CLEAN"
 preprocess_md "$PAGES_DIR/uniform-motion-theory.md"               "$UNIFORM_CLEAN"
+# Uniformly accelerated motion: theory + math-jit appended as a section
 preprocess_md "$PAGES_DIR/uniformly-accelerated-motion-theory.md" "$ACCELERATED_CLEAN"
-preprocess_md "$PAGES_DIR/uniformly-accelerated-motion-math-jit.md" "$ACCELERATED_MATHJIT_CLEAN"
+{
+  echo ""
+  echo "## Math JIT — Deriving the Position Formula"
+  echo ""
+  BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" \
+    < "$PAGES_DIR/uniformly-accelerated-motion-math-jit.md" \
+    | sed '/^# [^#]/d' \
+    | sed 's/^## /### /g'   # demote ## → ### so steps become subsections
+} >> "$ACCELERATED_CLEAN"
 preprocess_md "$PAGES_DIR/free-fall-theory.md"                    "$FREE_FALL_CLEAN"
+# Projectile motion: theory + math-jit appended as a section
 preprocess_md "$PAGES_DIR/projectile-motion-theory.md"            "$PROJECTILE_CLEAN"
-preprocess_md "$PAGES_DIR/projectile-motion-math-jit.md"          "$PROJECTILE_MATHJIT_CLEAN"
+{
+  echo ""
+  echo "## Math JIT — Splitting a Vector (The Shadow Analogy)"
+  echo ""
+  BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" \
+    < "$PAGES_DIR/projectile-motion-math-jit.md" \
+    | sed '/^# [^#]/d' \
+    | sed 's/^## /### /g'   # demote ## → ### so steps become subsections
+} >> "$PROJECTILE_CLEAN"
 
 # ---------------------------------------------------------------------------
 # Step 2 – (Optional) Build the standalone cover PDF with pdflatex/tikz
@@ -228,12 +246,11 @@ fi
 #            02  dedication        (raw LaTeX block)
 #            03  preface
 #            04  toc-placeholder   (raw LaTeX \tableofcontents)
-#            10  chapter 1 – uniform motion
-#            20  chapter 2 – uniformly accelerated motion
-#            21  math jit – deriving the position formula
-#            30  chapter 3 – free fall
-#            40  chapter 4 – projectile motion
-#            41  math jit – splitting a vector (shadow analogy)
+#            10  chapter 1 – physical quantities & measurements
+#            20  chapter 2 – uniform motion
+#            30  chapter 3 – uniformly accelerated motion  (+ position formula derivation)
+#            40  chapter 4 – free fall
+#            50  chapter 5 – projectile motion             (+ shadow analogy)
 #            90  appendix
 #            91  bibliography
 #            92  colophon          (raw LaTeX block)
@@ -247,12 +264,11 @@ pandoc \
   "$BOOK_DIR/01-half-title.md" \
   "$BOOK_DIR/02-dedication.md" \
   "$BOOK_DIR/03-preface.md" \
+  "$PHYSICAL_QUANTITIES_CLEAN" \
   "$UNIFORM_CLEAN" \
   "$ACCELERATED_CLEAN" \
-  "$ACCELERATED_MATHJIT_CLEAN" \
   "$FREE_FALL_CLEAN" \
   "$PROJECTILE_CLEAN" \
-  "$PROJECTILE_MATHJIT_CLEAN" \
   "$BOOK_DIR/90-appendix.md" \
   "$BOOK_DIR/91-bibliography.md" \
   "$BOOK_DIR/92-colophon.md" \
