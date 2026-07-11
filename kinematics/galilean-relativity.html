@@ -1,0 +1,84 @@
+---
+layout: simulation
+title: "Galilean Relativity & Reference Frames"
+sim_script: /assets/js/galilean-relativity/galilean-relativity-app.js
+---
+
+<aside class="panel">
+  <div class="nav-links">
+    <a href="{{ '/kinematics/' | relative_url }}" class="nav-link">← Kinematics</a>
+    <a href="{{ '/galilean-relativity-theory/' | relative_url }}" class="nav-link">📚 Theory</a>
+  </div>
+
+  <h1>Galilean Relativity</h1>
+
+  <div class="field">
+    <label for="trainVelocity">Train velocity (m/s)</label>
+    <input id="trainVelocity" type="range" min="0" max="20" step="1" value="10" />
+    <span id="velocityValue">10</span> m/s
+  </div>
+
+  <div style="display:flex; gap:8px; margin-bottom:16px;">
+    <button id="startButton" style="flex:1;">▶ Drop the ball</button>
+    <button id="resetButton" style="flex:1; background:#374151;">🔄 Reset</button>
+  </div>
+
+  <div class="stats">
+    <div><strong>Time:</strong> <span id="timeValue">0.00</span> s</div>
+    <div><strong>Height y (both frames):</strong> <span id="yPrimeValue">60.00</span> m</div>
+    <div><strong>Horizontal x (ground):</strong> <span id="xGroundValue">0.00</span> m</div>
+  </div>
+</aside>
+
+<main class="canvas-wrap">
+  <canvas id="scene" width="1500" height="500"></canvas>
+</main>
+
+<section class="sim-doc">
+  <div class="sim-doc-inner">
+
+    <h2>🎮 How to Use the Simulation</h2>
+
+    <h3>Step 1: Set the Train Velocity</h3>
+    <p>Use the <strong>"Train velocity"</strong> slider to set how fast the train moves relative to the ground (0 – 20 m/s).</p>
+
+    <h3>Step 2: Drop the Ball</h3>
+    <p>Click <strong>"Drop the ball"</strong>. The same event is shown simultaneously in two reference frames:</p>
+    <ul>
+      <li>
+        <strong>Left — S′ (Train Frame):</strong>
+        The camera rides with the train. The <span style="color:#2563eb;font-weight:bold">blue passenger</span>
+        sits inside the wagon and sees the ball fall in a straight <span style="color:#2563eb">blue vertical line</span>.
+      </li>
+      <li>
+        <strong>Right — S (Ground Frame):</strong>
+        The camera is fixed to the ground. The whole wagon slides past.
+        The <span style="color:#2563eb;font-weight:bold">blue figure</span> (passenger inside the transparent wagon)
+        shows his path as a <span style="color:#2563eb">blue dashed line</span> — straight in his own frame.
+        The <span style="color:#059669;font-weight:bold">green observer</span> standing beside the track
+        sees the same ball trace a <span style="color:#059669">green parabola</span>.
+      </li>
+    </ul>
+
+    <h3>Color coding</h3>
+    <ul>
+      <li><span style="color:#2563eb">■ Blue</span> — the passenger's perspective: ball, figure, and straight drop (train frame S′)</li>
+      <li><span style="color:#059669">■ Green</span> — the ground observer's perspective: figure, velocity arrow, and parabola (ground frame S)</li>
+    </ul>
+
+    <h3>Step 3: Experiment with Velocity</h3>
+    <p>Move the slider and drop again. Higher V → wider parabola on the right, while the left panel always shows the same straight fall. The vertical motion — and the fall time — are <strong>identical in both frames</strong>.</p>
+
+    <h3>The Galilean Transformation Equations</h3>
+    <p>The two views are connected by:</p>
+    <ul>
+      <li><strong>x(t) = x′(t) + V·t</strong> — ground position = train position + train displacement</li>
+      <li><strong>y(t) = y′(t)</strong> — vertical position is the same in both frames</li>
+      <li><strong>t = t′</strong> — time is absolute (same for everyone in Galilean physics)</li>
+    </ul>
+    <p>Since x′ = 0 (ball stays above the drop point in S′), the ground observer sees x = V·t and y = H − ½gt² — a parabola.</p>
+
+    <p class="tip">💡 <strong>Tip:</strong> Set V = 0 — both panels become identical, confirming the frames coincide when the train is stationary!</p>
+
+  </div>
+</section>
