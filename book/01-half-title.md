@@ -1,3 +1,3 @@
-# Tesla Engine {.unnumbered}
+# PhysicaLab {.unnumbered}
 
 *Interactive Physics Simulations*

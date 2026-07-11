@@ -1,0 +1,54 @@
+<svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross product shown as a vector rising straight up out of the plane containing a and b, perpendicular to both">
+
+  <!--
+    Oblique projection: a and b are drawn lying in a tilted "floor" plane,
+    c = a × b is drawn as a true vertical arrow rising out of that plane.
+
+    O = (90, 260)    origin
+    A = (240, 260)   tip of a   (floor, horizontal)
+    B = (180, 210)   tip of b   (floor, receding at an angle)
+    R = (330, 210)   4th vertex of the parallelogram (A + B - O)
+    C = (90, 120)    tip of a × b  (straight up out of the floor plane)
+  -->
+
+  <rect width="420" height="340" fill="#111827" rx="12"/>
+
+  <!-- ── Shaded parallelogram (the plane containing a and b); area = |a × b| ── -->
+  <polygon points="90,260 240,260 330,210 180,210" fill="#fbbf24" fill-opacity="0.18" stroke="none"/>
+
+  <!-- ── Parallelogram guide (translated copies, dashed) ── -->
+  <line x1="240" y1="260" x2="330" y2="210" stroke="#34d399" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+  <line x1="180" y1="210" x2="330" y2="210" stroke="#60a5fa" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+
+  <!-- ── Vector a: O → A (floor) ── -->
+  <line x1="90" y1="260" x2="240" y2="260" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="240,260 228,254 228,266" fill="#60a5fa"/>
+
+  <!-- ── Vector b: O → B (floor, receding) ── -->
+  <line x1="90" y1="260" x2="180" y2="210" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="180,210 168,206 172,218" fill="#34d399" transform="rotate(-29.05 180 210)"/>
+
+  <!-- ── Right-angle marker between a and a × b ── -->
+  <path d="M 104,260 L 104,246 L 90,246" stroke="#6b7280" stroke-width="1.2" fill="none"/>
+
+  <!-- ── Vector a × b: straight up, out of the plane ── -->
+  <line x1="90" y1="260" x2="90" y2="120" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="90,120 83,133 97,133" fill="#f59e0b"/>
+
+  <!-- ── Points ── -->
+  <circle cx="90" cy="260" r="4" fill="#9ca3af"/>
+  <circle cx="240" cy="260" r="4" fill="#60a5fa"/>
+  <circle cx="180" cy="210" r="4" fill="#34d399"/>
+  <circle cx="330" cy="210" r="3" fill="#9ca3af" opacity="0.7"/>
+
+  <!-- ── Labels ── -->
+  <text x="78" y="276" fill="#9ca3af" font-size="14" text-anchor="end" font-family="Georgia,serif" font-style="italic">O</text>
+  <text x="165" y="246" fill="#60a5fa" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a</text>
+  <text x="115" y="225" fill="#34d399" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">b</text>
+  <text x="185" y="228" fill="#fbbf24" font-size="13" text-anchor="middle" font-family="Georgia,serif" font-style="italic" opacity="0.9">Area = |a &#xD7; b|</text>
+  <text x="90" y="107" fill="#f59e0b" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a &#xD7; b</text>
+
+  <!-- ── Caption ── -->
+  <text x="210" y="325" fill="#6b7280" font-size="12" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a &#xD7; b is perpendicular to the plane of a and b (right-hand rule); its length = area of the parallelogram</text>
+
+</svg>

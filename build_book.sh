@@ -203,6 +203,16 @@ GALILEAN_RELATIVITY_CLEAN="$BUILD_DIR/galilean-relativity-theory.md"
 
 write_preprocess_script
 preprocess_md "$PAGES_DIR/physical-quantities-theory.md"          "$PHYSICAL_QUANTITIES_CLEAN"
+# Physical quantities: theory + math-jit appended as a section
+{
+  echo ""
+  echo "## Math JIT — Scalars and Vectors"
+  echo ""
+  BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" \
+    < "$PAGES_DIR/physical-quantities-math-jit.md" \
+    | sed '/^# [^#]/d' \
+    | sed 's/^## /### /g'   # demote ## → ### so steps become subsections
+} >> "$PHYSICAL_QUANTITIES_CLEAN"
 preprocess_md "$PAGES_DIR/uniform-motion-theory.md"               "$UNIFORM_CLEAN"
 # Uniformly accelerated motion: theory + math-jit appended as a section
 preprocess_md "$PAGES_DIR/uniformly-accelerated-motion-theory.md" "$ACCELERATED_CLEAN"
@@ -248,7 +258,7 @@ fi
 #            02  dedication        (raw LaTeX block)
 #            03  preface
 #            04  toc-placeholder   (raw LaTeX \tableofcontents)
-#            10  chapter 1 – physical quantities & measurements
+#            10  chapter 1 – physical quantities & measurements  (+ scalars and vectors)
 #            20  chapter 2 – uniform motion
 #            30  chapter 3 – uniformly accelerated motion  (+ position formula derivation)
 #            40  chapter 4 – free fall

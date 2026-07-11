@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vector subtraction shown as the arrow from the tip of b to the tip of a, equal to a minus b">
+
+  <!--
+    O = (60, 300)    origin
+    A = (220, 180)   tip of a
+    B = (150, 270)   tip of b
+    D = (130, 210)   tip of (a - b) translated to O  (= O + (A - B))
+  -->
+
+  <rect width="400" height="340" fill="#111827" rx="12"/>
+
+  <!-- ── Vector a: O → A ── -->
+  <line x1="60" y1="300" x2="220" y2="180" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="220,180 208,174 208,186" fill="#60a5fa" transform="rotate(-36.87 220 180)"/>
+
+  <!-- ── Vector b: O → B ── -->
+  <line x1="60" y1="300" x2="150" y2="270" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="150,270 138,264 138,276" fill="#34d399" transform="rotate(-18.43 150 270)"/>
+
+  <!-- ── a − b as the arrow from the tip of b to the tip of a ── -->
+  <line x1="150" y1="270" x2="220" y2="180" stroke="#f472b6" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="220,180 210,178 213,190" fill="#f472b6" transform="rotate(-52.13 220 180)"/>
+
+  <!-- ── a − b translated to the origin (dashed) ── -->
+  <line x1="60" y1="300" x2="130" y2="210" stroke="#f472b6" stroke-width="2" stroke-dasharray="6,4"/>
+  <polygon points="130,210 120,208 123,220" fill="#f472b6" transform="rotate(-52.13 130 210)"/>
+
+  <!-- ── Points ── -->
+  <circle cx="60" cy="300" r="4" fill="#9ca3af"/>
+  <circle cx="220" cy="180" r="4" fill="#60a5fa"/>
+  <circle cx="150" cy="270" r="4" fill="#34d399"/>
+
+  <!-- ── Labels ── -->
+  <text x="48" y="316" fill="#9ca3af" font-size="14" text-anchor="end" font-family="Georgia,serif" font-style="italic">O</text>
+  <text x="122" y="228" fill="#60a5fa" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a</text>
+  <text x="90" y="298" fill="#34d399" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">b</text>
+  <text x="205" y="215" fill="#f472b6" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a &#x2212; b</text>
+  <text x="70" y="248" fill="#f472b6" font-size="12" text-anchor="start" font-family="Georgia,serif" font-style="italic" opacity="0.85">a &#x2212; b</text>
+
+  <!-- ── Caption ── -->
+  <text x="200" y="325" fill="#6b7280" font-size="12" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a &#x2212; b points from the tip of b to the tip of a (i.e. a + (&#x2212;b))</text>
+
+</svg>

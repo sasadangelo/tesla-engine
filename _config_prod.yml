@@ -1,5 +1,5 @@
 # Jekyll configuration - PRODUCTION
-title: "Tesla Engine"
+title: "PhysicaLab"
 description: "Interactive Physics Simulations"
 url: "https://sasadangelo.github.io"
 baseurl: "/tesla-engine"

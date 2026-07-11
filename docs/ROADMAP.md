@@ -1,4 +1,4 @@
-# 🗺️ Tesla Engine — Roadmap
+# 🗺️ PhysicaLab — Roadmap
 
 > A structured journey through Physics, Mathematics, and Code.
 > Each topic builds on the previous one, introducing the **Just-in-Time math** needed to implement the simulation.
@@ -11,13 +11,14 @@
 
 | # | Topic | Description | Math JIT |
 |---|-------|-------------|----------|
-| 1.1 | ~~**Uniform Rectilinear Motion (URM)**~~ | ~~Displacement at constant velocity.~~ | Introduction to **Vectors** (magnitude, direction, sense). |
-| 1.2 | ~~**Uniformly Accelerated Motion (UAM)**~~ | ~~Introduction of constant acceleration.~~ | ~~[Deriving the Position Formula](../uniformly-accelerated-motion-math-jit/) — step-by-step algebraic derivation from average velocity to x(t) = x₀ + v₀t + ½at².~~ |
-| 1.3 | ~~**Free Fall**~~ | ~~Two objects (lead ball and feather) dropped simultaneously. Combo box for gravity preset (Earth, Mars, Jupiter, Deep Space). Slider for air resistance. Demonstrates that mass does not affect free-fall acceleration.~~ | — |
-| 1.4 | ~~**Projectile Motion (Parabolic)**~~ | ~~Two-dimensional integration of URM + free fall.~~ | ~~[Splitting a Vector — The Shadow Analogy](../projectile-motion-math-jit/) — sine and cosine as "shadow percentages" to decompose the initial velocity vector into X and Y components.~~ |
-| 1.5 | **Galilean Relativity & Reference Frames** | Inertial vs. non-inertial frames. No privileged frame — all inertial observers are equivalent. Simulation: a ball dropped inside a moving train appears to fall vertically for the passenger but traces a parabola for the trackside observer. Toggle button to switch between the two reference frames in real time. | **Galilean transformations** — x' = x − vt, t' = t; **relative velocity composition**: v'⃗ = v⃗ − u⃗. |
-| 1.6 | **Uniform Circular Motion (UCM)** | Constant-speed motion along a circle — introduces angular velocity ω, period T, and frequency f. | **Angular velocity** ω = Δθ/Δt, centripetal acceleration a = ω²·r. |
-| 1.7 | **Simple Harmonic Motion — Pendulum** | SHM as the projection of UCM: θ(t) = θ₀·cos(ωt) with ω = √(g/L). Interactive pendulum simulation. | **Period** T = 2π√(L/g) — bridge between circular motion and oscillation. |
+| 1.1 | ~~**Physical Quantities & Measurements**~~ | ~~Scalars vs. vectors, units, and how to measure velocity from position samples.~~ | ~~[Scalars and Vectors](../physical-quantities-math-jit/) — magnitude, direction, Cartesian vs. polar form, and the four core vector operations (sum, subtraction, dot product, cross product).~~ |
+| 1.2 | ~~**Uniform Rectilinear Motion (URM)**~~ | ~~Displacement at constant velocity.~~ | — |
+| 1.3 | ~~**Uniformly Accelerated Motion (UAM)**~~ | ~~Introduction of constant acceleration.~~ | ~~[Deriving the Position Formula](../uniformly-accelerated-motion-math-jit/) — step-by-step algebraic derivation from average velocity to x(t) = x₀ + v₀t + ½at².~~ |
+| 1.4 | ~~**Free Fall**~~ | ~~Two objects (lead ball and feather) dropped simultaneously. Combo box for gravity preset (Earth, Mars, Jupiter, Deep Space). Slider for air resistance. Demonstrates that mass does not affect free-fall acceleration.~~ | — |
+| 1.5 | ~~**Projectile Motion (Parabolic)**~~ | ~~Two-dimensional integration of URM + free fall.~~ | ~~[Splitting a Vector — The Shadow Analogy](../projectile-motion-math-jit/) — sine and cosine as "shadow percentages" to decompose the initial velocity vector into X and Y components.~~ |
+| 1.6 | ~~**Galilean Relativity & Reference Frames**~~ | ~~Inertial vs. non-inertial frames. No privileged frame — all inertial observers are equivalent. Simulation: a ball dropped inside a moving train appears to fall vertically for the passenger but traces a parabola for the trackside observer. Toggle button to switch between the two reference frames in real time.~~ | ~~**Galilean transformations** — x' = x − vt, t' = t; **relative velocity composition**: v'⃗ = v⃗ − u⃗.~~ |
+| 1.7 | **Uniform Circular Motion (UCM)** | Constant-speed motion along a circle — introduces angular velocity ω, period T, and frequency f. | **Angular velocity** ω = Δθ/Δt, centripetal acceleration a = ω²·r. |
+| 1.8 | **Simple Harmonic Motion — Pendulum** | SHM as the projection of UCM: θ(t) = θ₀·cos(ωt) with ω = √(g/L). Interactive pendulum simulation. | **Period** T = 2π√(L/g) — bridge between circular motion and oscillation. |
 
 ---
 
@@ -243,4 +244,4 @@
 
 ---
 
-*Total planned simulations: **69 topics** across 20 chapters grouped in 9 parts.*
+*Total planned simulations: **70 topics** across 20 chapters grouped in 9 parts.*

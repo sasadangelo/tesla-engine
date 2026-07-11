@@ -1,5 +1,5 @@
 ---
-title: "Tesla Engine"
+title: "PhysicaLab"
 subtitle: "Interactive Physics Simulations"
 author: "Salvatore D'Angelo"
 date: "2026"
@@ -38,7 +38,7 @@ header-includes:
     \pagestyle{fancy}
     \fancyhf{}
     \fancyhead[LE,RO]{\thepage}
-    \fancyhead[RE]{\itshape Tesla Engine}
+    \fancyhead[RE]{\itshape PhysicaLab}
     \fancyhead[LO]{\itshape \leftmark}
     \renewcommand{\headrulewidth}{0.4pt}
   - |

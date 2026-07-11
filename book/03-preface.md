@@ -1,6 +1,6 @@
 # Preface {.unnumbered}
 
-This book accompanies the **Tesla Engine** interactive physics simulation project, a web-based
+This book accompanies the **PhysicaLab** interactive physics simulation project, a web-based
 platform designed to make classical mechanics accessible through hands-on experimentation.
 
 The six topics covered here — *Physical Quantities & Measurements*, *Uniform Motion*,

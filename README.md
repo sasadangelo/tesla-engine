@@ -1,4 +1,4 @@
-# Tesla Engine — Interactive Physics Simulations
+# PhysicaLab — Interactive Physics Simulations
 
 A collection of interactive physics simulations built with a custom JavaScript physics engine and a [Jekyll](https://jekyllrb.com/) static site.
 

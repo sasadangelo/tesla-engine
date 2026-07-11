@@ -1,0 +1,45 @@
+<svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vector sum shown as the tip-to-tail and parallelogram construction: the resultant a plus b is the diagonal from the common origin">
+
+  <!--
+    O  = (60, 300)   origin
+    A  = (220, 180)  tip of a
+    B  = (150, 270)  tip of b
+    R  = (310, 150)  tip of a + b  (= A + B - O)
+  -->
+
+  <rect width="400" height="340" fill="#111827" rx="12"/>
+
+  <!-- ── Parallelogram guide (translated copies, dashed) ── -->
+  <line x1="220" y1="180" x2="310" y2="150" stroke="#34d399" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+  <line x1="150" y1="270" x2="310" y2="150" stroke="#60a5fa" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+
+  <!-- ── Vector a: O → A ── -->
+  <line x1="60" y1="300" x2="220" y2="180" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="220,180 208,174 208,186" fill="#60a5fa" transform="rotate(-36.87 220 180)"/>
+
+  <!-- ── Vector b: O → B ── -->
+  <line x1="60" y1="300" x2="150" y2="270" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="150,270 138,264 138,276" fill="#34d399" transform="rotate(-18.43 150 270)"/>
+
+  <!-- ── Resultant a + b: O → R ── -->
+  <line x1="60" y1="300" x2="310" y2="150" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="310,150 297,144 297,157" fill="#fbbf24" transform="rotate(-30.96 310 150)"/>
+
+  <!-- ── Points ── -->
+  <circle cx="60" cy="300" r="4" fill="#9ca3af"/>
+  <circle cx="220" cy="180" r="4" fill="#60a5fa"/>
+  <circle cx="150" cy="270" r="4" fill="#34d399"/>
+  <circle cx="310" cy="150" r="4" fill="#fbbf24"/>
+
+  <!-- ── Labels ── -->
+  <text x="48" y="316" fill="#9ca3af" font-size="14" text-anchor="end" font-family="Georgia,serif" font-style="italic">O</text>
+  <text x="122" y="228" fill="#60a5fa" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a</text>
+  <text x="90" y="298" fill="#34d399" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">b</text>
+  <text x="255" y="163" fill="#34d399" font-size="12" text-anchor="middle" font-family="Georgia,serif" font-style="italic" opacity="0.8">b</text>
+  <text x="225" y="230" fill="#60a5fa" font-size="12" text-anchor="middle" font-family="Georgia,serif" font-style="italic" opacity="0.8">a</text>
+  <text x="175" y="205" fill="#fbbf24" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a + b</text>
+
+  <!-- ── Caption ── -->
+  <text x="200" y="325" fill="#6b7280" font-size="12" text-anchor="middle" font-family="Georgia,serif" font-style="italic">Tip-to-tail / parallelogram rule — the resultant is the diagonal from O</text>
+
+</svg>

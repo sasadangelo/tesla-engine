@@ -1,5 +1,5 @@
 # Jekyll configuration - DEVELOPMENT
-title: "Tesla Engine"
+title: "PhysicaLab"
 description: "Interactive Physics Simulations"
 url: "http://localhost:5001"
 baseurl: ""

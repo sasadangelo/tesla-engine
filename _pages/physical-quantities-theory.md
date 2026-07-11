@@ -31,6 +31,9 @@ The **Système International d'Unités** (SI) is the globally agreed measurement
 
 > 💡 All other kinematic quantities — velocity, acceleration, angular velocity, etc. — are derived from these three.
 
+> Not every quantity is a plain number: some, like velocity and acceleration, also need a direction. Check out the [Math JIT: Scalars and Vectors]({{ '/physical-quantities-math-jit/' | relative_url }}) for a quick primer before you meet them.
+{: .math-jit-box }
+
 ### SI Prefixes
 
 When measured values are very large or very small, SI prefixes scale the unit by powers of ten:

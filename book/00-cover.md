@@ -1,8 +1,8 @@
-# Tesla Engine
+# PhysicaLab
 
 ## Interactive Physics Simulations
 
-### A Practical Guide to Uniform Motion and Projectile Motion
+### A Practical Guide to Physics
 
 ---
 

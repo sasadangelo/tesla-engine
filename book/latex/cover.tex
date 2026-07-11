@@ -1,4 +1,4 @@
-%% Tesla Engine — custom LaTeX cover page
+%% PhysicaLab — custom LaTeX cover page
 %% Used only when build_book.sh builds the standalone cover with pdflatex
 \documentclass[a4paper]{article}
 \usepackage[top=0cm,bottom=0cm,left=0cm,right=0cm]{geometry}
@@ -25,22 +25,27 @@
   % Book title
   \node[anchor=north, text=white, font=\Huge\bfseries, align=center]
     at ([yshift=-2cm]current page.north)
-    {Tesla Engine};
+    {PhysicaLab};
 
   % Subtitle
   \node[anchor=north, text=white!80!coverblue, font=\Large, align=center]
     at ([yshift=-4cm]current page.north)
     {Interactive Physics Simulations};
 
+  % Guide subtitle
+  \node[anchor=north, text=white!70!coverblue, font=\normalsize\itshape, align=center]
+    at ([yshift=-5.2cm]current page.north)
+    {A Practical Guide to Physics};
+
   % Horizontal rule
   \draw[white!60!coverblue, line width=1pt]
-    ([xshift=2cm, yshift=-5.5cm]current page.north west)
+    ([xshift=2cm, yshift=-6.3cm]current page.north west)
     --
-    ([xshift=-2cm, yshift=-5.5cm]current page.north east);
+    ([xshift=-2cm, yshift=-6.3cm]current page.north east);
 
   % Edition label
   \node[anchor=north, text=white!70!coverblue, font=\normalsize]
-    at ([yshift=-6.2cm]current page.north)
+    at ([yshift=-7cm]current page.north)
     {First Edition — 2026};
 
   % Author

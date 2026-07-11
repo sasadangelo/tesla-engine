@@ -4,7 +4,7 @@
 
 \begin{center}
 {\small
-\textit{Tesla Engine — Interactive Physics Simulations}\\[4pt]
+\textit{PhysicaLab — Interactive Physics Simulations}\\[4pt]
 First Edition, 2026\\[4pt]
 Written and typeset by Salvatore D'Angelo\\[4pt]
 Built with \href{https://pandoc.org}{Pandoc} and \LaTeX\\[4pt]

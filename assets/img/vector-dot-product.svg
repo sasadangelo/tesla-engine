@@ -1,0 +1,47 @@
+<svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dot product shown as the projection of b onto a: a dot b equals the length of a times the projected length of b">
+
+  <!--
+    O = (60, 300)    origin
+    A = (320, 300)   tip of a  (horizontal, for a clean projection)
+    B = (220, 180)   tip of b
+    F = (220, 300)   foot of the perpendicular from B onto the line of a
+  -->
+
+  <rect width="400" height="340" fill="#111827" rx="12"/>
+
+  <!-- ── Highlighted projection segment O → F (= |b| cosθ) ── -->
+  <line x1="60" y1="300" x2="220" y2="300" stroke="#f472b6" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- ── Vector a: O → A ── -->
+  <line x1="60" y1="300" x2="320" y2="300" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="320,300 308,294 308,306" fill="#60a5fa"/>
+
+  <!-- ── Vector b: O → B ── -->
+  <line x1="60" y1="300" x2="220" y2="180" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="220,180 208,174 208,186" fill="#34d399" transform="rotate(-36.87 220 180)"/>
+
+  <!-- ── Dashed perpendicular drop from B to F ── -->
+  <line x1="220" y1="180" x2="220" y2="300" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- ── Right-angle marker at F ── -->
+  <path d="M 210,300 L 210,290 L 220,290" stroke="#6b7280" stroke-width="1.2" fill="none"/>
+
+  <!-- ── θ arc between a and b ── -->
+  <path d="M 100,300 A 40,40 0 0,1 92,276" stroke="#f472b6" stroke-width="1.5" fill="none"/>
+  <text x="112" y="288" fill="#f472b6" font-size="14" text-anchor="middle" font-family="Georgia,serif" font-style="italic">&#x03B8;</text>
+
+  <!-- ── Points ── -->
+  <circle cx="60" cy="300" r="4" fill="#9ca3af"/>
+  <circle cx="220" cy="180" r="4" fill="#34d399"/>
+  <circle cx="220" cy="300" r="3" fill="#f472b6"/>
+
+  <!-- ── Labels ── -->
+  <text x="48" y="316" fill="#9ca3af" font-size="14" text-anchor="end" font-family="Georgia,serif" font-style="italic">O</text>
+  <text x="190" y="318" fill="#60a5fa" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a</text>
+  <text x="150" y="225" fill="#34d399" font-size="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic">b</text>
+  <text x="140" y="330" fill="#f472b6" font-size="13" text-anchor="middle" font-family="Georgia,serif" font-style="italic">|b| cos&#x03B8;</text>
+
+  <!-- ── Caption ── -->
+  <text x="200" y="30" fill="#6b7280" font-size="12" text-anchor="middle" font-family="Georgia,serif" font-style="italic">a &#xB7; b = |a| |b| cos&#x03B8; — how much b projects onto a</text>
+
+</svg>
