@@ -3,9 +3,9 @@
 This book accompanies the **Tesla Engine** interactive physics simulation project, a web-based
 platform designed to make classical mechanics accessible through hands-on experimentation.
 
-The five topics covered here — *Physical Quantities & Measurements*, *Uniform Motion*,
-*Uniformly Accelerated Motion*, *Free Fall*, and *Projectile Motion* — represent the
-foundational building blocks of classical kinematics.
+The six topics covered here — *Physical Quantities & Measurements*, *Uniform Motion*,
+*Uniformly Accelerated Motion*, *Free Fall*, *Projectile Motion*, and *Galilean Relativity
+& Reference Frames* — represent the foundational building blocks of classical kinematics.
 Understanding them gives a solid base for exploring all other areas of Newtonian mechanics.
 
 Each chapter pairs the underlying mathematical theory with practical examples and guidance
@@ -25,6 +25,9 @@ experiment with parameters while reading.
   same acceleration g regardless of mass, and the role of air resistance.
 - Chapter 5 covers Projectile Motion: decomposition into horizontal and vertical components,
   key formulas, and a vector decomposition primer (the shadow analogy).
+- Chapter 6 covers Galilean Relativity & Reference Frames: the historical path from Aristotle
+  to Galileo, inertial reference frames, the Galilean transformation equations, and the
+  ball-drop thought experiment.
 
 No advanced mathematics is required beyond basic algebra and trigonometry.
 

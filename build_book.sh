@@ -199,6 +199,7 @@ UNIFORM_CLEAN="$BUILD_DIR/uniform-motion-theory.md"
 ACCELERATED_CLEAN="$BUILD_DIR/uniformly-accelerated-motion-theory.md"
 FREE_FALL_CLEAN="$BUILD_DIR/free-fall-theory.md"
 PROJECTILE_CLEAN="$BUILD_DIR/projectile-motion-theory.md"
+GALILEAN_RELATIVITY_CLEAN="$BUILD_DIR/galilean-relativity-theory.md"
 
 write_preprocess_script
 preprocess_md "$PAGES_DIR/physical-quantities-theory.md"          "$PHYSICAL_QUANTITIES_CLEAN"
@@ -226,6 +227,7 @@ preprocess_md "$PAGES_DIR/projectile-motion-theory.md"            "$PROJECTILE_C
     | sed '/^# [^#]/d' \
     | sed 's/^## /### /g'   # demote ## → ### so steps become subsections
 } >> "$PROJECTILE_CLEAN"
+preprocess_md "$PAGES_DIR/galilean-relativity-theory.md"          "$GALILEAN_RELATIVITY_CLEAN"
 
 # ---------------------------------------------------------------------------
 # Step 2 – (Optional) Build the standalone cover PDF with pdflatex/tikz
@@ -251,6 +253,7 @@ fi
 #            30  chapter 3 – uniformly accelerated motion  (+ position formula derivation)
 #            40  chapter 4 – free fall
 #            50  chapter 5 – projectile motion             (+ shadow analogy)
+#            60  chapter 6 – galilean relativity & reference frames
 #            90  appendix
 #            91  bibliography
 #            92  colophon          (raw LaTeX block)
@@ -269,6 +272,7 @@ pandoc \
   "$ACCELERATED_CLEAN" \
   "$FREE_FALL_CLEAN" \
   "$PROJECTILE_CLEAN" \
+  "$GALILEAN_RELATIVITY_CLEAN" \
   "$BOOK_DIR/90-appendix.md" \
   "$BOOK_DIR/91-bibliography.md" \
   "$BOOK_DIR/92-colophon.md" \
