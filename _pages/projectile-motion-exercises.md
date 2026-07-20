@@ -122,6 +122,6 @@ Twenty problems to practice the equations from the [Projectile Motion Theory]({{
 
 ---
 
-[← Back to Theory]({{ '/projectile-motion-theory/' | relative_url }}){: .btn .btn-secondary }
+[← Back to Derivations]({{ '/projectile-motion-derivations/' | relative_url }}){: .btn .btn-secondary }
 [View Solutions →]({{ '/projectile-motion-solutions/' | relative_url }}){: .btn .btn-primary }
 {: .action-buttons }

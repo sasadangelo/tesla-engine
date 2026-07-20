@@ -148,7 +148,7 @@ $text =~ s/\{\{[^}]*\}\}//g;
 $text =~ s/\{%[^%]*%\}//g;
 
 # 4. Strip emoji from headings (and anywhere at start of token after ## prefix)
-$text =~ s/(^[ \t]*#{0,6}[ \t]*)[\x{1F000}-\x{1FFFF}\x{2600}-\x{27BF}\x{2300}-\x{23FF}]+[ \t]*/$1/mg;
+$text =~ s/(^[ \t]*#{0,6}[ \t]*)[\x{1F000}-\x{1FFFF}\x{2600}-\x{27BF}\x{2300}-\x{23FF}\x{2B00}-\x{2BFF}]+[ \t]*/$1/mg;
 # Strip stray variation selectors (U+FE0F) and zero-width joiners (U+200D)
 $text =~ s/[\x{FE0F}\x{200D}]//g;
 # Strip U+25B6 ▶ play icon used in CTA buttons
@@ -226,8 +226,62 @@ preprocess_md "$PAGES_DIR/uniformly-accelerated-motion-theory.md" "$ACCELERATED_
     | sed 's/^## /### /g'   # demote ## → ### so steps become subsections
 } >> "$ACCELERATED_CLEAN"
 preprocess_md "$PAGES_DIR/free-fall-theory.md"                    "$FREE_FALL_CLEAN"
-# Projectile motion: theory + math-jit appended as a section
+# Splice the full content of a page (H1 stripped, ## demoted to ###) right
+# after the first line in target_file matching marker_regex.
+splice_after_marker() {
+  local target_file="$1"
+  local marker_regex="$2"
+  local body_file="$3"
+  local tmp_out
+  tmp_out="$(mktemp)"
+  MARKER="$marker_regex" BODY_FILE="$body_file" perl -0777 -e '
+    open(my $in, "<:encoding(UTF-8)", $ARGV[0]) or die $!;
+    local $/;
+    my $text = <$in>;
+    close $in;
+    open(my $bf, "<:encoding(UTF-8)", $ENV{BODY_FILE}) or die $!;
+    my $body = <$bf>;
+    close $bf;
+    my $marker = $ENV{MARKER};
+    $text =~ s/($marker)/$1 . "\n\n" . $body . "\n"/e;
+    print $text;
+  ' "$target_file" > "$tmp_out"
+  mv "$tmp_out" "$target_file"
+}
+
+# Projectile motion: theory + derivations + exercises + solutions + math-jit
 preprocess_md "$PAGES_DIR/projectile-motion-theory.md"            "$PROJECTILE_CLEAN"
+
+DERIVATIONS_BODY="$BUILD_DIR/projectile-motion-derivations-body.md"
+BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" \
+  < "$PAGES_DIR/projectile-motion-derivations.md" \
+  | sed '/^# [^#]/d' \
+  | sed 's/^### /#### /g' \
+  | sed 's/^## /### /g' > "$DERIVATIONS_BODY"   # demote ## → ### and ### → #### so "Why is...?" nests under its formula heading
+
+EXERCISES_BODY="$BUILD_DIR/projectile-motion-exercises-body.md"
+BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" \
+  < "$PAGES_DIR/projectile-motion-exercises.md" \
+  | sed '/^# [^#]/d' \
+  | sed 's/^## /### /g' > "$EXERCISES_BODY"   # demote ## → ### so it nests under "## Practice Exercises"
+
+SOLUTIONS_BODY="$BUILD_DIR/projectile-motion-solutions-body.md"
+BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" \
+  < "$PAGES_DIR/projectile-motion-solutions.md" \
+  | sed '/^# [^#]/d' \
+  | sed 's/^## /### /g' > "$SOLUTIONS_BODY"   # demote ## → ### so it nests under "## Solutions"
+
+# The Theory page only teases Derivations/Exercises with a "Go to ..." link;
+# splice the real content in right after each teaser paragraph.
+splice_after_marker "$PROJECTILE_CLEAN" 'position equations\.' "$DERIVATIONS_BODY"
+splice_after_marker "$PROJECTILE_CLEAN" 'available afterward\.' "$EXERCISES_BODY"
+
+{
+  echo ""
+  echo "## Solutions"
+  echo ""
+  cat "$SOLUTIONS_BODY"
+} >> "$PROJECTILE_CLEAN"
 {
   echo ""
   echo "## Math JIT — Splitting a Vector (The Shadow Analogy)"

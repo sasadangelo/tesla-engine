@@ -56,19 +56,19 @@ Where \\(g = 9.81 \, \text{m/s}^2\\) is the acceleration due to gravity.
 \\[v_y(t) = v_{0y} - g \cdot t = v_0 \cdot \sin(\theta) - g \cdot t\\]
 {: .formula }
 
-### Important Parameters
+### Important Formulas
 
 **Time of Flight:**
-\\[T = \frac{2 \, v_0 \cdot \sin(\theta)}{g}\\]
-{: .formula }
-
-**Maximum Height:**
-\\[H = \frac{v_0^2 \cdot \sin^2(\theta)}{2g}\\]
-{: .formula }
+\\[T = \frac{2 \, v_0 \cdot \sin(\theta)}{g}\\] [🔍]({{ '/projectile-motion-derivations/#time-of-flight' | relative_url }}){: .derivation-icon title="See derivation" }
+{: .formula .formula-with-icon }
 
 **Range:**
-\\[R = \frac{v_0^2 \cdot \sin(2\theta)}{g}\\]
-{: .formula }
+\\[R = \frac{v_0^2 \cdot \sin(2\theta)}{g}\\] [🔍]({{ '/projectile-motion-derivations/#range' | relative_url }}){: .derivation-icon title="See derivation" }
+{: .formula .formula-with-icon }
+
+**Maximum Height:**
+\\[H = \frac{v_0^2 \cdot \sin^2(\theta)}{2g}\\] [🔍]({{ '/projectile-motion-derivations/#maximum-height' | relative_url }}){: .derivation-icon title="See derivation" }
+{: .formula .formula-with-icon }
 
 The maximum range is achieved at \\(\theta = 45°\\).
 {: .formula-description }
@@ -91,6 +91,17 @@ The range depends on both the initial velocity and the launch angle. For a given
 
 Projectile motion principles are used in sports (basketball, golf), military applications (ballistics), space exploration (rocket trajectories), and many engineering fields.
 {: .theory-section }
+
+---
+
+## 🔍 Derivations
+{: .section-heading }
+
+Curious about where the Time of Flight, Range and Maximum Height formulas actually come from? Walk through the step-by-step derivation of each one, starting from the basic velocity and position equations.
+{: .theory-section }
+
+[Go to Derivations →]({{ '/projectile-motion-derivations/' | relative_url }}){: .btn .btn-primary }
+{: .action-buttons }
 
 ---
 

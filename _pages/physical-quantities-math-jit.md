@@ -41,7 +41,9 @@ Examples: displacement, velocity, acceleration, force.
 
 Plot the pair \\((v_x, v_y)\\) in a Cartesian plane: it is simply a point \\(P\\). The vector \\(\vec{v}\\) is the arrow that goes from the origin \\(O\\) to \\(P\\). In 3D, the same idea works with a triple \\((v_x, v_y, v_z)\\) and a point in space.
 
-<img src="{{ '/assets/img/vector-cartesian-point.svg' | relative_url }}" alt="A vector as an arrow from the origin O to a point P with coordinates Vx, Vy in a Cartesian plane" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+<div class="graph-container">
+  <img src="{{ '/assets/img/vector-cartesian-point.svg' | relative_url }}" alt="A vector as an arrow from the origin O to a point P with coordinates Vx, Vy in a Cartesian plane" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+</div>
 
 So a vector and a point are two ways of looking at the same thing — the components ARE the coordinates of the point.
 {: .theory-section }
@@ -87,7 +89,9 @@ Add component by component. Geometrically, place the tail of \\(\vec{b}\\) at th
 \\[\vec{a} + \vec{b} = (a_x + b_x,\ a_y + b_y)\\]
 {: .formula-large }
 
-<img src="{{ '/assets/img/vector-sum.svg' | relative_url }}" alt="Vector sum shown as the tip-to-tail and parallelogram construction" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+<div class="graph-container">
+  <img src="{{ '/assets/img/vector-sum.svg' | relative_url }}" alt="Vector sum shown as the tip-to-tail and parallelogram construction" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+</div>
 
 **Used for:** combining displacements, combining velocities (e.g. a boat's velocity plus the current's), summing forces acting on a body.
 
@@ -98,7 +102,9 @@ Subtract component by component — equivalent to adding the opposite vector.
 \\[\vec{a} - \vec{b} = (a_x - b_x,\ a_y - b_y)\\]
 {: .formula-large }
 
-<img src="{{ '/assets/img/vector-subtraction.svg' | relative_url }}" alt="Vector subtraction shown as the arrow from the tip of b to the tip of a" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+<div class="graph-container">
+  <img src="{{ '/assets/img/vector-subtraction.svg' | relative_url }}" alt="Vector subtraction shown as the arrow from the tip of b to the tip of a" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+</div>
 
 **Used for:** finding the vector that connects two points, and — crucially for what comes next — computing a **change**, like \\(\Delta \vec{v} = \vec{v}_{\text{final}} - \vec{v}_{\text{initial}}\\), the basis of acceleration.
 
@@ -109,7 +115,9 @@ Multiplies two vectors and returns a **scalar** (a plain number, not a vector):
 \\[\vec{a} \cdot \vec{b} = a_x b_x + a_y b_y = \lvert\vec{a}\rvert\, \lvert\vec{b}\rvert \cos\theta\\]
 {: .formula-large }
 
-<img src="{{ '/assets/img/vector-dot-product.svg' | relative_url }}" alt="Dot product shown as the projection of b onto a" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+<div class="graph-container">
+  <img src="{{ '/assets/img/vector-dot-product.svg' | relative_url }}" alt="Dot product shown as the projection of b onto a" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+</div>
 
 **Used for:** measuring how much two vectors point the same way. It is maximum when they are parallel, zero when they are perpendicular. This is exactly how **work** is defined: \\(W = \vec{F} \cdot \vec{d}\\).
 
@@ -120,7 +128,9 @@ Multiplies two vectors and returns a **vector**, perpendicular to both (only def
 \\[\lvert\vec{a} \times \vec{b}\rvert = \lvert\vec{a}\rvert\, \lvert\vec{b}\rvert \sin\theta\\]
 {: .formula-large }
 
-<img src="{{ '/assets/img/vector-cross-product.svg' | relative_url }}" alt="Cross product shown as a vector rising straight up out of the plane containing a and b, perpendicular to both" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+<div class="graph-container">
+  <img src="{{ '/assets/img/vector-cross-product.svg' | relative_url }}" alt="Cross product shown as a vector rising straight up out of the plane containing a and b, perpendicular to both" style="width:100%;max-width:420px;display:block;margin:0 auto;">
+</div>
 
 Its direction follows the right-hand rule. **Used for:** quantities that depend on rotation or a perpendicular effect, such as **torque** and **angular momentum**.
 {: .theory-section }

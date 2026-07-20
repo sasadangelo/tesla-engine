@@ -471,6 +471,27 @@ canvas {
     font-style: italic;
 }
 
+/* Formula with a "see derivation" icon beside it */
+.formula-with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.derivation-icon {
+    flex-shrink: 0;
+    font-size: 20px;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.derivation-icon:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
 .guide-step {
     background: #111827;
     padding: 24px;
