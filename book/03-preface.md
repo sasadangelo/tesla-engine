@@ -3,10 +3,11 @@
 This book accompanies the **PhysicaLab** interactive physics simulation project, a web-based
 platform designed to make classical mechanics accessible through hands-on experimentation.
 
-The six topics covered here — *Physical Quantities & Measurements*, *Uniform Motion*,
-*Uniformly Accelerated Motion*, *Free Fall*, *Projectile Motion*, and *Galilean Relativity
-& Reference Frames* — represent the foundational building blocks of classical kinematics.
-Understanding them gives a solid base for exploring all other areas of Newtonian mechanics.
+The seven topics covered here — *Physical Quantities & Measurements*, *Uniform Motion*,
+*Uniformly Accelerated Motion*, *Free Fall*, *Projectile Motion*, *Galilean Relativity
+& Reference Frames*, and *Uniform Circular Motion* — represent the foundational building
+blocks of classical kinematics. Understanding them gives a solid base for exploring all
+other areas of Newtonian mechanics.
 
 Each chapter pairs the underlying mathematical theory with practical examples and guidance
 for using the online simulations. The reader is encouraged to visit the live demos and
@@ -28,6 +29,9 @@ experiment with parameters while reading.
 - Chapter 6 covers Galilean Relativity & Reference Frames: the historical path from Aristotle
   to Galileo, inertial reference frames, the Galilean transformation equations, and the
   ball-drop thought experiment.
+- Chapter 7 covers Uniform Circular Motion: angular velocity, period and frequency,
+  centripetal acceleration, and a primer on why circular-motion formulas require angles
+  measured in radians rather than degrees.
 
 No advanced mathematics is required beyond basic algebra and trigonometry.
 

@@ -1,0 +1,86 @@
+---
+layout: simulation
+title: "Uniform Circular Motion"
+sim_script: /assets/js/uniform-circular-motion/uniform-circular-motion-app.js
+---
+
+<aside class="panel">
+  <div class="nav-links">
+    <a href="{{ '/kinematics/' | relative_url }}" class="nav-link">← Kinematics</a>
+    <a href="{{ '/uniform-circular-motion-theory/' | relative_url }}" class="nav-link">📚 Theory</a>
+    <a href="{{ '/uniform-circular-motion-math-jit/' | relative_url }}" class="nav-link">🧮 Math JIT</a>
+    <a href="{{ '/uniform-circular-motion-exercises/' | relative_url }}" class="nav-link">📝 Exercises</a>
+  </div>
+
+  <h1>Uniform Circular Motion</h1>
+
+  <div class="field">
+    <label for="radius">Radius r (m)</label>
+    <input id="radius" type="number" min="0.5" max="5" step="0.1" value="3" />
+  </div>
+
+  <div class="field">
+    <label for="omega">Angular velocity ω (rad/s)</label>
+    <input id="omega" type="number" min="0.2" max="8" step="0.1" value="2" />
+  </div>
+
+  <div class="field">
+    <label for="direction">Direction</label>
+    <select id="direction">
+      <option value="1" selected>↺ Counter-clockwise</option>
+      <option value="-1">↻ Clockwise</option>
+    </select>
+  </div>
+
+  <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+    <button id="playPauseButton" style="flex: 1;">▶️ Play</button>
+    <button id="resetButton" style="flex: 1; background: #374151;">🔄 Reset</button>
+  </div>
+
+  <div class="stats">
+    <div><strong>Time:</strong> <span id="timeValue">0.00</span> s</div>
+    <div><strong>θ:</strong> <span id="thetaValue">0.0</span>°</div>
+    <div><strong>v:</strong> <span id="speedValue">0.00</span> m/s</div>
+    <div><strong>a<sub>c</sub>:</strong> <span id="accelValue">0.00</span> m/s²</div>
+    <div><strong>T:</strong> <span id="periodValue">0.00</span> s</div>
+    <div><strong>f:</strong> <span id="freqValue">0.000</span> Hz</div>
+  </div>
+</aside>
+
+<main class="canvas-wrap">
+  <canvas id="scene"></canvas>
+</main>
+
+<section class="sim-doc">
+  <div class="sim-doc-inner">
+
+    <h2>🎮 How to Use the Simulation</h2>
+
+    <h3>Step 1: Set the Radius</h3>
+    <p>Use the <strong>"Radius r"</strong> input to set the size of the circular path in meters (0.5 to 5 m).</p>
+
+    <h3>Step 2: Set the Angular Velocity</h3>
+    <p>Use the <strong>"Angular velocity ω"</strong> input to set how fast the body sweeps angle, in radians per second. A higher ω means a shorter period T and a faster-spinning point.</p>
+
+    <h3>Step 3: Choose a Direction</h3>
+    <p>Pick <strong>counter-clockwise</strong> or <strong>clockwise</strong> rotation.</p>
+
+    <h3>Step 4: Play</h3>
+    <p>Click <strong>"Play"</strong> to start the motion. You'll see:</p>
+    <ul>
+      <li>The blue body moving at constant speed along the dashed circular path</li>
+      <li>The <strong>green arrow</strong> — the velocity vector, always tangent to the circle</li>
+      <li>The <strong>red arrow</strong> — the centripetal acceleration vector, always pointing toward the center</li>
+      <li>Live readouts of elapsed time, angle θ, speed v, centripetal acceleration a<sub>c</sub>, period T, and frequency f</li>
+    </ul>
+
+    <h3>Step 5: Experiment</h3>
+    <p>Try changing r and ω while the simulation is running (even mid-motion) and observe how:</p>
+    <ul>
+      <li>The velocity vector length never changes direction relative to the radius — it's always perpendicular to it</li>
+      <li>The acceleration vector always points toward the center, no matter where the body is on the circle</li>
+      <li>Doubling ω quadruples the centripetal acceleration (a<sub>c</sub> = ω²r), while doubling r only doubles it</li>
+    </ul>
+
+  </div>
+</section>

@@ -11,3 +11,6 @@
 
 5. Wikipedia contributors. "Uniform motion." *Wikipedia, The Free Encyclopedia*.  
    <https://en.wikipedia.org/wiki/Uniform_motion>
+
+6. Wikipedia contributors. "Circular motion." *Wikipedia, The Free Encyclopedia*.  
+   <https://en.wikipedia.org/wiki/Circular_motion>

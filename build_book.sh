@@ -170,15 +170,26 @@ $text =~ s/[\x{2080}-\x{2089}]//g;
 $text =~ s/\x{2093}//g;   # ₓ
 $text =~ s/\x{1D67}//g;   # ᵧ
 
-# 6. Greek letters used in plain-text formula lines → ASCII
+# 6. Greek letters and math symbols used in plain-text formula lines → ASCII
 $text =~ s/\x{03B8}/theta/g;   # θ
+$text =~ s/\x{03C9}/omega/g;   # ω
 $text =~ s/\x{03C0}/pi/g;      # π
 $text =~ s/\x{0394}/Delta/g;   # Δ
 $text =~ s/\x{2248}/approx/g;  # ≈
-$text =~ s/\x{00B2}/^2/g;      # ²
-$text =~ s/\x{00B9}/^1/g;      # ¹
+$text =~ s/\x{2260}/!=/g;      # ≠
 $text =~ s/\x{00BD}/1\/2/g;    # ½
 $text =~ s/\x{00B7}/*/g;       # · (middle dot)
+$text =~ s/\x{2713}/(check)/g; # ✓
+
+# 6b. Superscript digits/minus (scientific notation like 10⁻⁵, ω², 10³) → ^-N / ^N
+my %superscript = (
+    "\x{2070}" => '0', "\x{00B9}" => '1', "\x{00B2}" => '2', "\x{00B3}" => '3',
+    "\x{2074}" => '4', "\x{2075}" => '5', "\x{2076}" => '6', "\x{2077}" => '7',
+    "\x{2078}" => '8', "\x{2079}" => '9',
+);
+my $super_chars = join '', keys %superscript;
+$text =~ s/\x{207B}([$super_chars])/'^-' . $superscript{$1}/ge;   # ⁻ + digit, e.g. 10⁻⁵
+$text =~ s/([$super_chars])/'^' . $superscript{$1}/ge;             # standalone digit, e.g. ω²
 
 # 7. Remove CTA button lines [text](url){: .btn ...}
 $text =~ s/^\[.*?\]\(.*?\)\{:.*?\.btn.*?\}[ \t]*\n?//mg;
@@ -200,6 +211,7 @@ ACCELERATED_CLEAN="$BUILD_DIR/uniformly-accelerated-motion-theory.md"
 FREE_FALL_CLEAN="$BUILD_DIR/free-fall-theory.md"
 PROJECTILE_CLEAN="$BUILD_DIR/projectile-motion-theory.md"
 GALILEAN_RELATIVITY_CLEAN="$BUILD_DIR/galilean-relativity-theory.md"
+UCM_CLEAN="$BUILD_DIR/uniform-circular-motion-theory.md"
 
 write_preprocess_script
 preprocess_md "$PAGES_DIR/physical-quantities-theory.md"          "$PHYSICAL_QUANTITIES_CLEAN"
@@ -293,6 +305,41 @@ splice_after_marker "$PROJECTILE_CLEAN" 'available afterward\.' "$EXERCISES_BODY
 } >> "$PROJECTILE_CLEAN"
 preprocess_md "$PAGES_DIR/galilean-relativity-theory.md"          "$GALILEAN_RELATIVITY_CLEAN"
 
+# Uniform circular motion: theory + exercises + solutions + math-jit
+preprocess_md "$PAGES_DIR/uniform-circular-motion-theory.md"      "$UCM_CLEAN"
+
+UCM_EXERCISES_BODY="$BUILD_DIR/uniform-circular-motion-exercises-body.md"
+BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" \
+  < "$PAGES_DIR/uniform-circular-motion-exercises.md" \
+  | sed '/^# [^#]/d' \
+  | sed 's/^## /### /g' > "$UCM_EXERCISES_BODY"   # demote ## → ### so it nests under "## Practice Exercises"
+
+UCM_SOLUTIONS_BODY="$BUILD_DIR/uniform-circular-motion-solutions-body.md"
+BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" \
+  < "$PAGES_DIR/uniform-circular-motion-solutions.md" \
+  | sed '/^# [^#]/d' \
+  | sed 's/^## /### /g' > "$UCM_SOLUTIONS_BODY"   # demote ## → ### so it nests under "## Solutions"
+
+# The Theory page only teases Exercises with a "Go to ..." link;
+# splice the real content in right after the teaser paragraph.
+splice_after_marker "$UCM_CLEAN" 'available afterward\.' "$UCM_EXERCISES_BODY"
+
+{
+  echo ""
+  echo "## Solutions"
+  echo ""
+  cat "$UCM_SOLUTIONS_BODY"
+} >> "$UCM_CLEAN"
+{
+  echo ""
+  echo "## Math JIT — Degrees vs. Radians"
+  echo ""
+  BOOK_IMG_DIR="$BUILD_DIR/img" perl "$BUILD_DIR/preprocess.pl" \
+    < "$PAGES_DIR/uniform-circular-motion-math-jit.md" \
+    | sed '/^# [^#]/d' \
+    | sed 's/^## /### /g'   # demote ## → ### so steps become subsections
+} >> "$UCM_CLEAN"
+
 # ---------------------------------------------------------------------------
 # Step 2 – (Optional) Build the standalone cover PDF with pdflatex/tikz
 # ---------------------------------------------------------------------------
@@ -318,6 +365,7 @@ fi
 #            40  chapter 4 – free fall
 #            50  chapter 5 – projectile motion             (+ shadow analogy)
 #            60  chapter 6 – galilean relativity & reference frames
+#            70  chapter 7 – uniform circular motion        (+ degrees vs radians, exercises, solutions)
 #            90  appendix
 #            91  bibliography
 #            92  colophon          (raw LaTeX block)
@@ -337,6 +385,7 @@ pandoc \
   "$FREE_FALL_CLEAN" \
   "$PROJECTILE_CLEAN" \
   "$GALILEAN_RELATIVITY_CLEAN" \
+  "$UCM_CLEAN" \
   "$BOOK_DIR/90-appendix.md" \
   "$BOOK_DIR/91-bibliography.md" \
   "$BOOK_DIR/92-colophon.md" \
