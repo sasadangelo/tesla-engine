@@ -1,7 +1,7 @@
 ---
 layout: theory
 title: "Projectile Motion — Exercises"
-sim_url: /projectile-motion.html
+sim_url: /kinematics/projectile-motion.html
 permalink: /projectile-motion-exercises/
 ---
 

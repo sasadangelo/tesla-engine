@@ -50,8 +50,9 @@ tesla-engine/
 │           └── projectile-motion-app.js # UI wiring
 │
 ├── index.html               # Home page
-├── uniform-motion.html      # Speed race simulation page
-└── projectile-motion.html   # Projectile motion simulation page
+└── kinematics/
+    ├── uniform-motion.html  # Speed race simulation page
+    └── projectile-motion.html # Projectile motion simulation page
 ```
 
 ---
@@ -101,8 +102,8 @@ When building for production the `baseurl` is set to `/tesla-engine` automatical
 
 | Simulation | Theory | Launch |
 |---|---|---|
-| Uniform Motion — Speed Race | `/uniform-motion-theory/` | `/uniform-motion.html` |
-| Projectile Motion | `/projectile-motion-theory/` | `/projectile-motion.html` |
+| Uniform Motion — Speed Race | `/uniform-motion-theory/` | `/kinematics/uniform-motion.html` |
+| Projectile Motion | `/projectile-motion-theory/` | `/kinematics/projectile-motion.html` |
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: theory
 title: "Uniform Motion Theory"
-sim_url: /uniform-motion.html
+sim_url: /kinematics/uniform-motion.html
 permalink: /uniform-motion-theory/
 ---
 
@@ -150,5 +150,5 @@ In uniform motion, displacement grows linearly with time.
 
 Now that you understand the theory, try the interactive simulation to see uniform motion in action!
 
-[▶️ Launch Speed Race Simulation]({{ '/uniform-motion.html' | relative_url }}){: .btn .btn-primary .btn-large }
+[▶️ Launch Speed Race Simulation]({{ '/kinematics/uniform-motion.html' | relative_url }}){: .btn .btn-primary .btn-large }
 {: .cta-section }

@@ -1,7 +1,7 @@
 ---
 layout: theory
 title: "Deriving the Position Formula — Math JIT"
-sim_url: /uniformly-accelerated-motion.html
+sim_url: /kinematics/uniformly-accelerated-motion.html
 permalink: /uniformly-accelerated-motion-math-jit/
 ---
 
@@ -123,5 +123,5 @@ This is exactly the position formula — derived from scratch, step by step.
 ---
 
 [← Back to Theory]({{ '/uniformly-accelerated-motion-theory/' | relative_url }}){: .btn .btn-secondary }
-[▶️ Launch Simulation]({{ '/uniformly-accelerated-motion.html' | relative_url }}){: .btn .btn-primary }
+[▶️ Launch Simulation]({{ '/kinematics/uniformly-accelerated-motion.html' | relative_url }}){: .btn .btn-primary }
 {: .cta-section }

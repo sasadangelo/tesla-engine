@@ -1,7 +1,7 @@
 ---
 layout: theory
 title: "Projectile Motion"
-sim_url: /projectile-motion.html
+sim_url: /kinematics/projectile-motion.html
 permalink: /projectile-motion-theory/
 ---
 
@@ -117,5 +117,5 @@ Ready to put these formulas to work? Solve 20 problems of increasing difficulty,
 ---
 
 [← Back to Home]({{ '/' | relative_url }}){: .btn .btn-secondary }
-[Launch Simulation →]({{ '/projectile-motion.html' | relative_url }}){: .btn .btn-primary }
+[Launch Simulation →]({{ '/kinematics/projectile-motion.html' | relative_url }}){: .btn .btn-primary }
 {: .action-buttons }

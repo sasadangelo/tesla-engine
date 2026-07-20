@@ -1,7 +1,7 @@
 ---
 layout: theory
 title: "Uniformly Accelerated Motion Theory"
-sim_url: /uniformly-accelerated-motion.html
+sim_url: /kinematics/uniformly-accelerated-motion.html
 permalink: /uniformly-accelerated-motion-theory/
 ---
 
@@ -174,5 +174,5 @@ In uniformly accelerated motion (from rest):
 
 Now that you understand the theory, try the interactive simulation to see uniformly accelerated motion in action!
 
-[▶️ Launch Acceleration Race Simulation]({{ '/uniformly-accelerated-motion.html' | relative_url }}){: .btn .btn-primary .btn-large }
+[▶️ Launch Acceleration Race Simulation]({{ '/kinematics/uniformly-accelerated-motion.html' | relative_url }}){: .btn .btn-primary .btn-large }
 {: .cta-section }

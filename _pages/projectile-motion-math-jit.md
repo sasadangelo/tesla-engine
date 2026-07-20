@@ -1,7 +1,7 @@
 ---
 layout: theory
 title: "Splitting a Vector (The Shadow Analogy) — Math JIT"
-sim_url: /projectile-motion.html
+sim_url: /kinematics/projectile-motion.html
 permalink: /projectile-motion-math-jit/
 ---
 

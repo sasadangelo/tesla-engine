@@ -1,7 +1,7 @@
 ---
 layout: theory
 title: "Free Fall Theory"
-sim_url: /free-fall.html
+sim_url: /kinematics/free-fall.html
 permalink: /free-fall-theory/
 ---
 
@@ -178,5 +178,5 @@ In every case, with no air, **two objects of different masses land at the same t
 Drop a lead ball and a feather together. Switch between vacuum and air, change gravity, and
 see Galileo's result with your own eyes.
 
-[▶️ Launch Free Fall Simulation]({{ '/free-fall.html' | relative_url }}){: .btn .btn-primary .btn-large }
+[▶️ Launch Free Fall Simulation]({{ '/kinematics/free-fall.html' | relative_url }}){: .btn .btn-primary .btn-large }
 {: .cta-section }
